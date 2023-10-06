@@ -1,4 +1,21 @@
-html, body {
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/*
+body {
     margin: 0 auto;
     text-align: center;
+    background-color: white;  //White background 
 } 
+
+.accent-blue {
+    background-color: #0c84ed;  //Blue accent color 
+    color: white; // White text on blue background 
+}
+*/
+
+/* NAVBAR */
+/* .nav{
+    font-weight: bold;
+} */
