@@ -2,11 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
+/* body {
     margin: 0 auto;
     text-align: center;
 
-} 
+}  */
 /*
 body {
     margin: 0 auto;
@@ -21,6 +21,6 @@ body {
 */
 
 /* NAVBAR */
-/* .nav{
+#nav{
     font-weight: bold;
-} */
+} 
