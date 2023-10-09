@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccelerateNow - Luxury And Super Car Rentals</title>
+    <title>Accelerate Now - Luxury And Super Car Rentals</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -51,8 +51,10 @@
     <!-- Hero Section (Tailwind CSS) -->
     <header class="bg-gradient-to-r from-blue-500 to-indigo-800 text-white text-center py-20">
         <h1 class="text-4xl font-semibold">Experience the Ultimate Luxury</h1>
-        <h2 class="mt-4 text-lg">Rent the finest luxury cars for your special occasions.</h2>
-        <h4> Disclamer, must be 21+ to rent a car</h4>
+        <br>
+        <h2 class="text-xl text-lg">Rent the finest luxury cars for your special occasions.</h2>
+        <br>
+        <h3> *Disclamer: Must be 21+ to rent a car*</h3>
         <a href="#"
             class="mt-6 inline-block bg-white text-indigo-800 hover:bg-indigo-800 hover:text-white py-2 px-6 rounded-full font-semibold">Explore
             Cars</a>
@@ -63,14 +65,14 @@
         <h2 class="text-center mb-4">Our Luxury Cars</h2>
         <div class="row">
             <!-- Add car listings and info here as a preview here -->
-            <!-- put every car into a databse and int he db have a mph, mpg, car, car type "hyper, luxury, etc" brand, etc -->
+            <!-- put every car into a databse and int he db have a mph, mpg, car, car type "hyper, luxury, etc" brand, the 0-60 etc -->
             <!-- dont forget the view more cars button -->
         </div>
     </section>
 
     <!-- Footer (Tailwind CSS) -->
     <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2023 Luxury Car Rental</p>
+        <p>&copy; 2023 Accelerate Now</p>
     </footer>
 
     <!-- Bootstrap JS and jQuery (Add these scripts at the end of the body) -->
