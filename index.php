@@ -51,7 +51,8 @@
     <!-- Hero Section (Tailwind CSS) -->
     <header class="bg-gradient-to-r from-blue-500 to-indigo-800 text-white text-center py-20">
         <h1 class="text-4xl font-semibold">Experience the Ultimate Luxury</h1>
-        <p class="mt-4 text-lg">Rent the finest luxury cars for your special occasions.</p>
+        <h2 class="mt-4 text-lg">Rent the finest luxury cars for your special occasions.</h2>
+        <h4> Disclamer, must be 21+ to rent a car</h4>
         <a href="#"
             class="mt-6 inline-block bg-white text-indigo-800 hover:bg-indigo-800 hover:text-white py-2 px-6 rounded-full font-semibold">Explore
             Cars</a>
@@ -61,27 +62,9 @@
     <section class="container mt-5">
         <h2 class="text-center mb-4">Our Luxury Cars</h2>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="car1.jpg" class="card-img-top" alt="Car 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Car Model 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-primary">Rent Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="car2.jpg" class="card-img-top" alt="Car 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Car Model 2</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-primary">Rent Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more car listings here -->
+            <!-- Add car listings and info here as a preview here -->
+            <!-- put every car into a databse and int he db have a mph, mpg, car, car type "hyper, luxury, etc" brand, etc -->
+            <!-- dont forget the view more cars button -->
         </div>
     </section>
 
