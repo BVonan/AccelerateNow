@@ -29,7 +29,7 @@
             </div>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <?php include 'includes/nav.php'; ?>
+                <?php include 'includes/nav.php'; ?>
             </div>
 
             <div class="flex-none flex items-center justify-center">
@@ -43,7 +43,7 @@
                         echo '<a href="logout.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log Out</a>';
                     } else {
                         // Display "Log In" and "Sign Up" links if the user is not logged in.
-                        echo '<a href="#" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log In</a>';
+                        echo '<a href="login.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log In</a>';
                         echo '<a href="signup.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-blue-500 text-white">Sign Up</a>';
                     }
                     ?>
