@@ -1,0 +1,5 @@
+make sure when a user logs in or signs up they can see their username where the log in or sign up was
+make sure someoen with the same email cant sign up
+make a profile page so users can see what cars theyve made
+fix the log in visually 
+fix the sign up visually 
