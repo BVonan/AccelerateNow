@@ -1,7 +1,9 @@
 make a js function for index.php (carasoul) and car.php (cards)
 have car be able to search by name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, cost_per_day (0-50) (50-100), etc
 to see: image, name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, traveling_capacity, cost_per_day
-make sure someoen with the same email cant sign up
+make sure someoen with the same email and user cant sign up
 make a profile page so users can see what cars theyve made
 fix the log in visually 
 fix the sign up visually 
+
+DONT FORGET PULL REQUEST
