@@ -1,9 +1,18 @@
+index page
 make a js function for index.php (carasoul) and car.php (cards)
+
+car page
 have car be able to search by name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, cost_per_day (0-50) (50-100), etc
 to see: image, name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, traveling_capacity, cost_per_day
-make sure someoen with the same email and user cant sign up
-make a profile page so users can see what cars theyve made
+
 fix the log in visually 
 fix the sign up visually 
+make a profile page so users can see what cars theyve made
+
+
+page to return cars and see which cars youve rented
+when you click on your username, you can see your profile and which cars youv erented out and whichj cars are currently being rented 
+make a profile page so users can see what cars theyve made
+
 
 DONT FORGET PULL REQUEST
