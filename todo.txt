@@ -14,5 +14,9 @@ page to return cars and see which cars youve rented
 when you click on your username, you can see your profile and which cars youv erented out and whichj cars are currently being rented 
 make a profile page so users can see what cars theyve made
 
+fix the user session. they should be logged in on any page after loggin in
+
+fix the login. user can log in on any page and stay on current page without geetting redirected to the index.php
+
 
 DONT FORGET PULL REQUEST
