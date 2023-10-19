@@ -12,15 +12,13 @@ session_start(); // Initialize the session
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/splide@3.0.8/dist/css/splide.min.css">
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <!-- JS -->
-    <script src="/assets/js/script.js"></script>
 </head>
 
 <body>
-    <!-- Navigation Bar (Bootstrap) -->
     <!-- Navigation Bar (Bootstrap) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -55,36 +53,27 @@ session_start(); // Initialize the session
             </div>
         </div>
     </nav>
+
     <!-- Hero Section (Tailwind CSS) -->
     <header class="bg-gradient-to-r from-blue-500 to-indigo-800 text-white text-center py-20">
         <h1 class="text-4xl font-semibold">Experience the Ultimate Luxury</h1>
         <br>
         <h2 class="text-xl text-lg">Rent the finest luxury cars for your special occasions.</h2>
         <br>
-        <h3> *Disclamer: Must be 21+ to rent a car*</h3>
+        <h3> *Disclaimer: Must be 21+ to rent a car*</h3>
         <a href="#"
             class="mt-6 inline-block bg-white text-indigo-800 hover:bg-indigo-800 hover:text-white py-2 px-6 rounded-full font-semibold">Explore
             Cars</a>
     </header>
 
-    <!-- Car Listing Section (Bootstrap) -->
-    <section class="container mt-5">
-        <h2 class="text-center mb-4">Our Luxury Cars</h2>
-        <div class="row">
-            <!-- Add car listings and info here as a preview here -->
-            <!-- put every car into a databse and int he db have a mph, mpg, car, car type "hyper, luxury, etc" brand, the 0-60 etc -->
-            <!-- dont forget the view more cars button -->
-        </div>
-    </section>
+    <!-- Car Carousel with Info -->
+    <?php include 'ran_car.php'; ?>
+
 
     <!-- Footer (Tailwind CSS) -->
     <footer class="bg-gray-800 text-white py-6 text-center">
         <p>&copy; 2023 Accelerate Now</p>
     </footer>
-
-    <!-- Bootstrap JS and jQuery (Add these scripts at the end of the body) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
