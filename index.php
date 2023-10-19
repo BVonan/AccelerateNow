@@ -5,18 +5,8 @@ session_start(); // Initialize the session
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accelerate Now - Luxury And Super Car Rentals</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Splide CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/splide@3.0.8/dist/css/splide.min.css">
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
-</head>
+<?php include 'includes/header.php'; ?>
+
 
 <body>
     <!-- Navigation Bar (Bootstrap) -->
