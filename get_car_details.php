@@ -1,15 +1,23 @@
 <?php
-// Include your database connection function here
-include 'db.php';
+include 'assets/config/db.php';
 
-
-// Get the car ID from the request
-$data = json_decode(file_get_contents('php://input'));
-$carId = $data->carId;
-
-// Get car details using the function
-$carDetails = getCarDetails($carId);
-
-// Return car details as JSON
-header('Content-Type: application/json');
-echo json_encode($carDetails);
+if (isset($_POST['car_id'])) {
+    $carId = $_POST['car_id'];
+    
+    $conn = connectToDatabase();
+    $sql = "SELECT * FROM cars WHERE id = ?";
+    
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("i", $carId);
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        
+        if ($row = $result->fetch_assoc()) {
+            echo json_encode($row);
+        }
+    }
+    
+    $conn->close();
+}
+?>
