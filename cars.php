@@ -45,28 +45,62 @@ session_start(); // Initialize the session
 
 <!-- Main Content -->
 <div class="container mx-auto mt-4 flex">
-    <!-- Sidebar Filter Section -->
-    <aside class="w-1/4 p-4">
-        <div class="mb-4">
-            <!-- Filter by Year Dropdown -->
-            <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
-            <div class="relative">
+     <!-- Sidebar Filter Section -->
+     <aside class="w-1/4 p-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
                 <select id="year" class="w-full border rounded px-3 py-2 appearance-none">
-                    <!-- Populate options for the year filter -->
+                    <option value="">All</option>
                     <option value="2023">2023</option>
                     <!-- Add more years as needed -->
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M14.293 5.293a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 7.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0z" />
-                    </svg>
-                </div>
             </div>
-        </div>
 
-        <!-- Add more filter options as needed with similar dropdown structures -->
-        <!-- For example, you can add filters for other attributes like company, engine type, etc. -->
-    </aside>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="company">Company</label>
+                <input type="text" id="company" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="engine_type">Engine Type</label>
+                <input type="text" id="engine_type" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="zero_to_sixty">0-60 Time</label>
+                <input type="text" id="zero_to_sixty" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="mpg">MPG</label>
+                <input type="text" id="mpg" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="fuel_type">Fuel Type</label>
+                <input type="text" id="fuel_type" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="seating_space">Seating Space</label>
+                <input type="text" id="seating_space" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="seats">Seats</label>
+                <input type="number" id="seats" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Traveling Capacity</label>
+                <input type="text" id="traveling_capacity" class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="cost_per_day">Cost Per Day</label>
+                <input type="number" id="cost_per_day" class="w-full border rounded px-3 py-2">
+            </div>
+        </aside>
 
     <!-- Car Listings -->
     <div class="w-3/4 p-4">
@@ -159,7 +193,7 @@ $(document).ready(function() {
     });
 });
 </script>
-
+<script src="js/main.js"></script>
 </body>
 <?php include 'includes/footer.php'; ?>
 </html>

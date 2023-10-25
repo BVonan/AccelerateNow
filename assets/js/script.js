@@ -13,42 +13,70 @@ setInterval(showNextCar, 5000);
 // End of car slideshow
 
 
-// // JavaScript to show/hide the modal and handle actions
-// const carModal = document.getElementById('carModal');
-// const viewButtons = document.querySelectorAll('.view-details');
-// const closeModalButton = document.querySelector('.close-modal');
-// const carNameElement = document.getElementById('carName');
-// const carYearElement = document.getElementById('carYear');
-// const modalContent = document.querySelector('.modal-content');
 
-// viewButtons.forEach(button => {
-//     button.addEventListener('click', async () => {
-//         // Get the car ID from the button's data attribute
-//         const carId = button.getAttribute('data-car-id');
-        
-//         // Use an AJAX request to fetch car data from the server
-//         const response = await fetch('get_car_details.php', {
-//             method: 'POST',
-//             body: JSON.stringify({ carId }),
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         });
-        
-//         if (response.ok) {
-//             // Parse the JSON response
-//             const carDetails = await response.json();
+$(document).ready(function () {
+    fetchAndDisplayCars();
 
-//             // Display car details in the modal
-//             carNameElement.textContent = carDetails.name;
-//             carYearElement.textContent = carDetails.year;
-//             // Add more car details here
+    // Filter cars when filter inputs change
+    $('input, select').on('input', function () {
+        fetchAndDisplayCars();
+    });
+});
 
-//             carModal.classList.remove('hidden');
-//         }
-//     });
-// });
+function fetchAndDisplayCars() {
+    // Fetch cars from the server based on filter criteria
 
-// closeModalButton.addEventListener('click', () => {
-//     carModal.classList.add('hidden');
-// });
+    var filters = {
+        year: $('#year').val(),
+        name: $('#name').val(),
+        company: $('#company').val(),
+        engine_type: $('#engine_type').val(),
+        zero_to_sixty: $('#zero_to_sixty').val(),
+        mpg: $('#mpg').val(),
+        fuel_type: $('#fuel_type').val(),
+        seating_space: $('#seating_space').val(),
+        seats: $('#seats').val(),
+        traveling_capacity: $('#traveling_capacity').val(),
+        cost_per_day: $('#cost_per_day').val()
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: 'get_cars.php',
+        data: filters,
+        success: function (data) {
+            $('#carListings').html(data);
+        }
+    });
+}
+
+// Add click event listener to the car view button
+$(document).on('click', '.view-details', function () {
+    var carId = $(this).data('car-id');
+    getCarDetails(carId);
+});
+
+function getCarDetails(carId) {
+    // Fetch and display car details
+
+    $.ajax({
+        type: 'POST',
+        url: 'get_car_details.php',
+        data: { car_id: carId },
+        success: function (data) {
+            $('#carModal').html(data).show();
+        }
+    });
+}
+
+// Add click event listener to the modal close button
+$(document).on('click', '.close-modal', function () {
+    $('#carModal').hide().html('');
+});
+
+// Add click event listener to the select car button
+$(document).on('click', '.select-car', function () {
+    var carId = $(this).data('car-id');
+    // Implement your logic for selecting a car here
+    // You can use another AJAX request to save the selected car, for example.
+});

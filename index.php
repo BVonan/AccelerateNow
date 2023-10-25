@@ -51,7 +51,7 @@ session_start(); // Initialize the session
         <h2 class="text-xl text-lg">Rent the finest luxury cars for your special occasions.</h2>
         <br>
         <h3> *Disclaimer: Must be 21+ to rent a car*</h3>
-        <a href="/car.php"
+        <a href="/cars.php"
             class="mt-6 inline-block bg-white text-indigo-800 hover:bg-indigo-800 hover:text-white py-2 px-6 rounded-full font-semibold">Explore
             Cars</a>
     </header>
