@@ -9,4 +9,6 @@
     <link rel="stylesheet" href="https://unpkg.com/splide@3.0.8/dist/css/splide.min.css">
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.3.0/dist/alpine.js" defer></script>
 </head>

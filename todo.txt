@@ -18,5 +18,7 @@ fix the user session. they should be logged in on any page after loggin in
 
 fix the login. user can log in on any page and stay on current page without geetting redirected to the index.php
 
+Make users have a delete account feature
+
 
 DONT FORGET PULL REQUEST
