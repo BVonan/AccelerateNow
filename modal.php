@@ -16,7 +16,7 @@
                 <p>Year: <span id="carYear"></span></p>
                 <!-- Add more car details -->
                 <div class="mt-4">
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-full mr-2">Select Car</button>
+                    <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full mr-2 select-car">Select Car</a>
                     <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-full close-modal">Close</button>
                 </div>
             </div>

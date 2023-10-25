@@ -5,7 +5,7 @@ if (isset($_POST['car_id'])) {
     $carId = $_POST['car_id'];
     
     $conn = connectToDatabase();
-    $sql = "SELECT * FROM cars WHERE id = ?";
+    $sql = "SELECT * FROM cars WHERE car_id = ?";
     
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("i", $carId);

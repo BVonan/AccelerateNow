@@ -129,6 +129,7 @@ session_start(); // Initialize the session
 $(document).ready(function() {
     // Handle the click event on the "View" button
     $(".view-details").on("click", function() {
+        console.log("Button clicked"); // Add this line to check if the button click event is detected
         var carId = $(this).data("car-id");
 
         // Use AJAX to fetch car details from the server
@@ -137,6 +138,7 @@ $(document).ready(function() {
             url: "get_car_details.php", // Create this file to handle the request
             data: { car_id: carId },
             success: function(response) {
+                console.log("AJAX success:", response); // Add this line to check the response from the server
                 var carDetails = JSON.parse(response);
 
                 // Populate the modal with car details
@@ -152,6 +154,7 @@ $(document).ready(function() {
 
     // Close the modal
     $(".close-modal").on("click", function() {
+        console.log("Modal close button clicked"); // Add this line to check if the close button is working
         $("#carModal").addClass("hidden");
     });
 });
