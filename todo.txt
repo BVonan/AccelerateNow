@@ -21,5 +21,4 @@ fix the login. user can log in on any page and stay on current page without geet
 Make users have a delete account feature
 make users able to see what car they have rented and which cars theyre currently renting
 
-
 DONT FORGET PULL REQUEST
