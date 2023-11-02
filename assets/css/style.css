@@ -35,4 +35,30 @@ body {
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-    }
+}
+
+
+    /* Add Bootstrap and Tailwind CSS styles as needed */
+
+/* Example: Apply a custom background color to the body */
+body {
+    background-color: #f5f5f5; /* Light gray background color */
+}
+
+/* Style the navigation bar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Style the container for car listings */
+.container {
+    background-color: #ffffff; /* White container background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the filter options */
+
+
+/* Add more custom styling as needed */
