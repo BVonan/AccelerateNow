@@ -48,7 +48,7 @@ session_start(); // Initialize the session
   <div class="flex">
     <!-- Aside Filter Section -->
     <aside class="w-1/4 p-4">
-      <form id="filterForm" method="get" action="">
+      <form id="filterForm" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <!-- Filter by Year -->
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
@@ -187,23 +187,52 @@ session_start(); // Initialize the session
         include 'assets/config/db.php';
 
         // Function to fetch and display cars
-        function fetchAndDisplayCars($yearFilter, $companyFilter)
-        {
+        function fetchAndDisplayCars($yearFilter, $companyFilter, $engineTypeFilter, $zeroToSixtyFilter, $mpgFilter, $seatingSpaceFilter, $travelingCapacityFilter, $costPerDayFilter) {
           $conn = connectToDatabase();
+        
           $sql = "SELECT car_id, name, year, image, company, engine_type, zero_to_sixty, mpg, seating_space, traveling_capacity, cost_per_day, fuel_type FROM cars WHERE 1";
-          
-
-          // Add filters based on user selections
+        
+          // Apply filters based on user selections
           if (!empty($yearFilter)) {
             $sql .= " AND year = " . intval($yearFilter);
           }
-
+        
           if (!empty($companyFilter)) {
             $sql .= " AND company = '" . $companyFilter . "'";
           }
-
+        
+          if (!empty($engineTypeFilter)) {
+            $sql .= " AND engine_type = '" . $engineTypeFilter . "'";
+          }
+        
+          if (!empty($zeroToSixtyFilter)) {
+            $sql .= " AND zero_to_sixty = '" . $zeroToSixtyFilter . "'";
+          }
+        
+          if (!empty($mpgFilter)) {
+            $sql .= " AND mpg = '" . $mpgFilter . "'";
+          }
+        
+          if (!empty($seatingSpaceFilter)) {
+            $sql .= " AND seating_space = '" . $seatingSpaceFilter . "'";
+          }
+        
+          if (!empty($travelingCapacityFilter)) {
+            $sql .= " AND traveling_capacity = '" . $travelingCapacityFilter . "'";
+          }
+        
+          if (!empty($costPerDayFilter)) {
+            // Extract the price range from the filter
+            $priceRange = explode('-', $costPerDayFilter);
+            $startPrice = isset($priceRange[0]) ? intval(substr($priceRange[0], 1)) : 0;
+            $endPrice = isset($priceRange[1]) ? intval(substr($priceRange[1], 1)) : PHP_INT_MAX;
+            $sql .= " AND cost_per_day >= " . $startPrice . " AND cost_per_day <= " . $endPrice;
+          }
+        
+          // Add more filters as needed
+        
           $result = $conn->query($sql);
-
+        
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo '<div class="bg-white rounded-lg p-4">';
@@ -216,16 +245,23 @@ session_start(); // Initialize the session
           } else {
             echo "No cars available.";
           }
-
+        
           $conn->close();
         }
-
-        // Retrieve the selected year and company filters
-        $yearFilter = isset($_GET['year']) ? $_GET['year'] : '';
+        
+        // Retrieve the selected filters
+        $yearFilter = isset($_GET['year']) ? intval($_GET['year']) : '';
         $companyFilter = isset($_GET['company']) ? $_GET['company'] : '';
-
-        // Call the function to fetch and display cars with the selected filters
-        fetchAndDisplayCars($yearFilter, $companyFilter);
+        $engineTypeFilter = isset($_GET['engine_type']) ? $_GET['engine_type'] : '';
+        $zeroToSixtyFilter = isset($_GET['zero_to_sixty']) ? $_GET['zero_to_sixty'] : '';
+        $mpgFilter = isset($_GET['mpg']) ? $_GET['mpg'] : '';
+        $seatingSpaceFilter = isset($_GET['seating_space']) ? $_GET['seating_space'] : '';
+        $travelingCapacityFilter = isset($_GET['traveling_capacity']) ? $_GET['traveling_capacity'] : '';
+        $costPerDayFilter = isset($_GET['cost_per_day']) ? $_GET['cost_per_day'] : '';
+        
+        // Call the function with all the filters
+        fetchAndDisplayCars($yearFilter, $companyFilter, $engineTypeFilter, $zeroToSixtyFilter, $mpgFilter, $seatingSpaceFilter, $travelingCapacityFilter, $costPerDayFilter);
+        
         ?>
       </div>
     </div>

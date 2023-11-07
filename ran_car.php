@@ -48,7 +48,6 @@ $randomCars = getRandomCarsInfo($conn);
             $mpg = $car['mpg'];
             $fuelType = $car['fuel_type'];
             $seatingSpace = $car['seating_space'];
-            $seats = $car['seats'];
             $travelingCapacity = $car['traveling_capacity'];
             $costPerDay = number_format($car['cost_per_day'], 2);
 

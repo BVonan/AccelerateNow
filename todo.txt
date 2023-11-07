@@ -5,7 +5,6 @@ car page
 have car be able to search by name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, cost_per_day (0-50) (50-100), etc
 to see: image, name, year, company, zero_to_sixty, mpg, engine_type, fuel_type, seating_space, seats, traveling_capacity, cost_per_day
 
-fix the log in visually 
 fix the sign up visually 
 make a profile page so users can see what cars theyve made
 

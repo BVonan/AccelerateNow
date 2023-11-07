@@ -8,30 +8,43 @@
 
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div
+            class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
             <!-- Car details content goes here -->
-            <div class="modal-content p-6">
-                <h2 class="text-2xl font-semibold mb-4" id="carName"></h2>
-                <!-- Display car details here -->
-                <p>Year: <span id="carYear"></span></p>
-                <p>Company: <span id="carCompany"></span></p>
-                <p>Engine Type: <span id="carEngineType"></span></p>
-                <p>0 to 60 mph: <span id="carZeroToSixty"></span></p>
-                <p>MPG: <span id="carMPG"></span></p>
-                <p>Fuel Type: <span id="carFuelType"></span></p>
-                <p>Seating Space: <span id="carSeatingSpace"></span></p>
-                <p>Seats: <span id="carSeats"></span></p>
-                <p>Traveling Capacity: <span id="carTravelingCapacity"></span></p>
-                <p>Cost per Day: $<span id="carCostPerDay"></span></p>
-                <!-- Add more car details -->
-                <div class="mt-4">
-                    <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full mr-2 select-car">Select Car</a>
-                    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-full close-modal">Close</button>
+            <div class="modal-content p-6 flex">
+                <div class="left-details pr-4">
+                    <h2 class="text-2xl font-semibold mb-4" id="carName" style="color: #3c82f6;"></h2>
+                    <!-- Display car details here -->
+                    <p><strong>Year:</strong> <span id="carYear"></span></p>
+                    <p><strong>Company:</strong> <span id="carCompany"></span></p>
+                    <p><strong>Engine Type:</strong> <span id="carEngineType"></span></p>
+                    <p><strong>0 to 60 mph:</strong> <span id="carZeroToSixty"></span></p>
+                    <p><strong>MPG:</strong> <span id="carMPG"></span></p>
+                </div>
+                <div class="right-details">
+                    <p><strong>Fuel Type:</strong> <span id="carFuelType"></span></p>
+                    <p><strong>Seating Space:</strong> <span id="carSeatingSpace"></span></p>
+                    <p><strong>Seats:</strong> <span id="carSeats"></span></p>
+                    <p><strong>Traveling Capacity:</strong> <span id="carTravelingCapacity"></span></p>
+                    <p><strong>Cost per Day:</strong> $<span id="carCostPerDay"></span></p>
+                    <!-- Add more car details -->
+                    <div class="mt-4">
+                        <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full mr-2 select-car">Select Car</a>
+                        <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-full close-modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -48,6 +61,7 @@
                     var carDetails = JSON.parse(response);
 
                     // Populate the modal with car details
+                    $("#carImage").text(carDetails.image);
                     $("#carName").text(carDetails.name);
                     $("#carYear").text(carDetails.year);
                     $("#carCompany").text(carDetails.company);
