@@ -48,129 +48,132 @@ session_start(); // Initialize the session
   <div class="flex">
     <!-- Aside Filter Section -->
     <aside class="w-1/4 p-4">
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
-        <select id="year" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="2023">2023</option>
-          <!-- Add more years as needed -->
-        </select>
-      </div>
+      <form id="filterForm" method="get" action="">
+        <!-- Filter by Year -->
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
+          <select id="year" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="2023">2023</option>
+            <!-- Add more years as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="company">Company</label>
-        <select id="company" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="Mercedes-Benz">Mercedes-Benz</option>
-          <option value="BMW">BMW</option>
-          <option value="Audi">Audi</option>
-          <option value="Lexus">Lexus</option>
-          <option value="Porsche">Porsche</option>
-          <option value="Tesla">Tesla</option>
-          <option value="McLaren">McLaren</option>
-          <option value="Bugatti">Bugatti</option>
-          <option value="Rolls-Royce">Rolls-Royce</option>
-          <option value="Lamborghini">Lamborghini</option>
-          <option value="Jaguar">Jaguar</option>
-          <option value="Aston Martin">Aston Martin</option>
-          <option value="Ferrari">Ferrari</option>
-          <option value="Bentley">Bentley</option>
-          <option value="Koenigsegg">Koenigsegg</option>
-          <option value="Pagani">Pagani</option>
-          <option value="Volvo">Volvo</option>
-          <option value="Volkswagen">Volkswagen</option>
-          <!-- Add more companies as needed -->
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="company">Company</label>
+          <select id="company" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="BMW">BMW</option>
+            <option value="Audi">Audi</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Tesla">Tesla</option>
+            <option value="McLaren">McLaren</option>
+            <option value="Bugatti">Bugatti</option>
+            <option value="Rolls-Royce">Rolls-Royce</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Bentley">Bentley</option>
+            <option value="Koenigsegg">Koenigsegg</option>
+            <option value="Pagani">Pagani</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <!-- Add more companies as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="engine_type">Engine Type</label>
-        <select id="engine_type" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="V8">V8</option>
-          <option value="Inline-6">Inline-6</option>
-          <option value="V6">V6</option>
-          <option value="Electric">Electric</option>
-          <option value="Hybrid">Hybrid</option>
-          <option value="Gasoline">Gasoline</option>
-          <option value="V12">V12</option>
-          <option value="Flat-6">Flat-6</option>
-          <option value="W12">W12</option>
-          <option value="V10">V10</option>
-          <option value="Flat-4">Flat-4</option>
-          <option value="W16">W16</option>
-          <option value="Inline-4">Inline-4</option>
-          <!-- Add more engine types as needed -->
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="engine_type">Engine Type</label>
+          <select id="engine_type" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="V8">V8</option>
+            <option value="Inline-6">Inline-6</option>
+            <option value="V6">V6</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Gasoline">Gasoline</option>
+            <option value="V12">V12</option>
+            <option value="Flat-6">Flat-6</option>
+            <option value="W12">W12</option>
+            <option value="V10">V10</option>
+            <option value="Flat-4">Flat-4</option>
+            <option value="W16">W16</option>
+            <option value="Inline-4">Inline-4</option>
+            <!-- Add more engine types as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="zero_to_sixty">0-60 Time</label>
-        <select id="zero_to_sixty" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="0-2.4 seconds">0-2.4 seconds</option>
-          <option value="2.5-3.4 seconds">2.5-3.4 seconds</option>
-          <option value="3.5-4.9 seconds">3.5-4.9 seconds</option>
-          <option value="5.0+ seconds">5.0+ seconds</option>
-          <!-- Add more 0-60 times as needed -->
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="zero_to_sixty">0-60 Time</label>
+          <select id="zero_to_sixty" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="0-2.4 seconds">0-2.4 seconds</option>
+            <option value="2.5-3.4 seconds">2.5-3.4 seconds</option>
+            <option value="3.5-4.9 seconds">3.5-4.9 seconds</option>
+            <option value="5.0+ seconds">5.0+ seconds</option>
+            <!-- Add more 0-60 times as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="mpg">MPG</label>
-        <select id="mpg" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="8-25 MPG">8-25 MPG</option>
-          <option value="26-50 MPG">26-50 MPG</option>
-          <option value="51-75 MPG">51-75 MPG</option>
-          <option value="76-125+ MPG">76-125+ MPG</option>
-          <!-- Add more MPG options as needed -->
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="mpg">MPG</label>
+          <select id="mpg" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="8-25 MPG">8-25 MPG</option>
+            <option value="26-50 MPG">26-50 MPG</option>
+            <option value="51-75 MPG">51-75 MPG</option>
+            <option value="76-125+ MPG">76-125+ MPG</option>
+            <!-- Add more MPG options as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="seating_space">Seating Space</label>
-        <select id="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <script>
-            for (let i = 100; i <= 700; i += 50) {
-              let startMiles = i;
-              let endMiles = i + 49;
-              let optionText = `${startMiles} - ${endMiles} miles`;
-              document.write(`<option value="${optionText}">${optionText}</option>`);
-            }
-          </script>
-          <!-- Add more seating space in miles options as needed -->
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="seating_space">Seating Space</label>
+          <select id="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <script>
+              for (let i = 100; i <= 700; i += 50) {
+                let startMiles = i;
+                let endMiles = i + 49;
+                let optionText = `${startMiles} - ${endMiles} miles`;
+                document.write(`<option value="${optionText}">${optionText}</option>`);
+              }
+            </script>
+            <!-- Add more seating space in miles options as needed -->
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Traveling Capacity</label>
-        <select id="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <option value="2 seats">2 seats</option>
-          <option value="4 seats">4 seats</option>
-          <option value="5 seats">5 seats</option>
-          <option value="7 seats">7 seats</option>
-        </select>
-      </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Traveling Capacity</label>
+          <select id="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <option value="2 seats">2 seats</option>
+            <option value="4 seats">4 seats</option>
+            <option value="5 seats">5 seats</option>
+            <option value="7 seats">7 seats</option>
+          </select>
+        </div>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="cost_per_day">Cost Per Day</label>
-        <select id="cost_per_day" class="w-full border rounded px-3 py-2 appearance-none">
-          <option value="">All</option>
-          <script>
-            for (let i = 200; i <= 1000; i += 100) {
-              let startPrice = i;
-              let endPrice = i + 99;
-              let optionText = `$${startPrice} - $${endPrice}`;
-              document.write(`<option value="${optionText}">${optionText}</option>`);
-            }
-          </script>
-          <!-- Add more cost per day options as needed -->
-        </select>
-      </div>
-
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="cost_per_day">Cost Per Day</label>
+          <select id="cost_per_day" class="w-full border rounded px-3 py-2 appearance-none">
+            <option value="">All</option>
+            <script>
+              for (let i = 200; i <= 1000; i += 100) {
+                let startPrice = i;
+                let endPrice = i + 99;
+                let optionText = `$${startPrice} - $${endPrice}`;
+                document.write(`<option value="${optionText}">${optionText}</option>`);
+              }
+            </script>
+            <!-- Add more cost per day options as needed -->
+          </select>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-full mt-4">Apply Filters</button>
+      </form>
       <!-- Add other input fields for filtering as needed -->
     </aside>
 
@@ -184,15 +187,19 @@ session_start(); // Initialize the session
         include 'assets/config/db.php';
 
         // Function to fetch and display cars
-        function fetchAndDisplayCars($yearFilter)
+        function fetchAndDisplayCars($yearFilter, $companyFilter)
         {
           $conn = connectToDatabase();
-          // Modify the SQL query to select the 'id' field
-          $sql = "SELECT car_id, name, year, image FROM cars";
+          $sql = "SELECT car_id, name, year, image, company, engine_type, zero_to_sixty, mpg, seating_space, traveling_capacity, cost_per_day, fuel_type FROM cars WHERE 1";
+          
 
-          // Add a filter for the selected year
+          // Add filters based on user selections
           if (!empty($yearFilter)) {
-            $sql .= " WHERE year = " . intval($yearFilter);
+            $sql .= " AND year = " . intval($yearFilter);
+          }
+
+          if (!empty($companyFilter)) {
+            $sql .= " AND company = '" . $companyFilter . "'";
           }
 
           $result = $conn->query($sql);
@@ -213,12 +220,12 @@ session_start(); // Initialize the session
           $conn->close();
         }
 
-
-        // Retrieve the selected year filter (you can expand this for more filters)
+        // Retrieve the selected year and company filters
         $yearFilter = isset($_GET['year']) ? $_GET['year'] : '';
+        $companyFilter = isset($_GET['company']) ? $_GET['company'] : '';
 
-        // Call the function to fetch and display cars with the selected year filter
-        fetchAndDisplayCars($yearFilter);
+        // Call the function to fetch and display cars with the selected filters
+        fetchAndDisplayCars($yearFilter, $companyFilter);
         ?>
       </div>
     </div>

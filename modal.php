@@ -13,16 +13,15 @@
             <div class="modal-content p-6">
                 <h2 class="text-2xl font-semibold mb-4" id="carName"></h2>
                 <!-- Display car details here -->
-                <p>Year: <span id="carYear"></span></p>
-                <p>Company: <span id="carCompany"></span></p>
-                <p>Engine Type: <span id="carEngineType"></span></p>
-                <p>0 to 60 mph: <span id="carZeroToSixty"></span></p>
-                <p>MPG: <span id="carMPG"></span></p>
-                <p>Fuel Type: <span id="carFuelType"></span></p>
-                <p>Seating Space: <span id="carSeatingSpace"></span></p>
-                <p>Seats: <span id="carSeats"></span></p>
-                <p>Traveling Capacity: <span id="carTravelingCapacity"></span></p>
-                <p>Cost per Day: <span id="carCostPerDay"></span></p>
+                <p id="carYear"></p>
+                <p id="carCompany"></p>
+                <p id="carEngineType"></p>
+                <p id="carZeroToSixty"></p>
+                <p id="carMPG"></p>
+                <p id="carFuelType"></p>
+                <p id="carSeatingSpace"></p>
+                <p id="carTravelingCapacity"></p>
+                <p id="carCostPerDay"></p>
                 <!-- Add more car details -->
                 <div class="mt-4">
                     <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full mr-2 select-car">Select Car</a>
@@ -32,3 +31,42 @@
         </div>
     </div>
 </div>
+
+<!-- JavaScript to populate the modal -->
+<script>
+$(document).ready(function () {
+    // Handle the click event on the "View" button
+    $(".view-details").on("click", function () {
+        var carName = $(this).data("car-name");
+        var carYear = $(this).data("car-year");
+        var carCompany = $(this).data("car-company");
+        var carEngineType = $(this).data("car-engine-type");
+        var carZeroToSixty = $(this).data("car-zero-to-sixty");
+        var carMPG = $(this).data("car-mpg");
+        var carFuelType = $(this).data("car-fuel-type");
+        var carSeatingSpace = $(this).data("car-seating-space");
+        var carTravelingCapacity = $(this).data("car-traveling-capacity");
+        var carCostPerDay = $(this).data("car-cost-per-day");
+
+        // Populate the modal with car details
+        $("#carName").text(carName);
+        $("#carYear").text("Year: " + carYear);
+        $("#carCompany").text("Company: " + carCompany);
+        $("#carEngineType").text("Engine Type: " + carEngineType);
+        $("#carZeroToSixty").text("0 to 60 mph: " + carZeroToSixty);
+        $("#carMPG").text("MPG: " + carMPG);
+        $("#carFuelType").text("Fuel Type: " + carFuelType);
+        $("#carSeatingSpace").text("Seating Space: " + carSeatingSpace);
+        $("#carTravelingCapacity").text("Traveling Capacity: " + carTravelingCapacity);
+        $("#carCostPerDay").text("Cost per Day: $" + carCostPerDay);
+
+        // Show the modal
+        $("#carModal").removeClass("hidden");
+    });
+
+    // Close the modal
+    $(".close-modal").on("click", function () {
+        $("#carModal").addClass("hidden");
+    });
+});
+</script>
