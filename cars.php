@@ -13,17 +13,17 @@ session_start(); // Initialize the session
   <!-- Navigation Bar (Bootstrap) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="index.php">
-        <img src="fast_car_logo.png" alt="Fast Car Logo" width="30" height="30" class="d-inline-block align-top">
-        Accelerate Now
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="fast_car_logo.png" alt="Fast Car Logo" width="30" height="30" class="d-inline-block align-top">
+          Accelerate Now
+        </a>
+      </div>
+
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <?php include 'includes/nav.php'; ?>
       </div>
+
       <div class="flex-none flex items-center justify-center">
         <div class="flex space-x-4">
           <?php
@@ -44,13 +44,13 @@ session_start(); // Initialize the session
     </div>
   </nav>
 
-
   <!-- Main Content -->
   <div class="flex">
+    <!-- Aside Filter Section -->
     <aside class="w-1/4 p-4">
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
-        <select id="year" class="form-control">
+        <select id="year" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="2023">2023</option>
           <!-- Add more years as needed -->
@@ -59,7 +59,7 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="company">Company</label>
-        <select id="company" class="form-control">
+        <select id="company" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="Mercedes-Benz">Mercedes-Benz</option>
           <option value="BMW">BMW</option>
@@ -85,7 +85,7 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="engine_type">Engine Type</label>
-        <select id="engine_type" class="form-control">
+        <select id="engine_type" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="V8">V8</option>
           <option value="Inline-6">Inline-6</option>
@@ -106,7 +106,7 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="zero_to_sixty">0-60 Time</label>
-        <select id="zero_to_sixty" class="form-control">
+        <select id="zero_to_sixty" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="0-2.4 seconds">0-2.4 seconds</option>
           <option value="2.5-3.4 seconds">2.5-3.4 seconds</option>
@@ -118,7 +118,7 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="mpg">MPG</label>
-        <select id="mpg" class="form-control">
+        <select id="mpg" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="8-25 MPG">8-25 MPG</option>
           <option value="26-50 MPG">26-50 MPG</option>
@@ -130,16 +130,23 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="seating_space">Seating Space</label>
-        <select id="seating_space" class="form-control">
+        <select id="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
+          <script>
+            for (let i = 100; i <= 700; i += 50) {
+              let startMiles = i;
+              let endMiles = i + 49;
+              let optionText = `${startMiles} - ${endMiles} miles`;
+              document.write(`<option value="${optionText}">${optionText}</option>`);
+            }
+          </script>
           <!-- Add more seating space in miles options as needed -->
-          <!-- You can retain your existing JavaScript-generated options here -->
         </select>
       </div>
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Traveling Capacity</label>
-        <select id="traveling_capacity" class="form-control">
+        <select id="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
           <option value="2 seats">2 seats</option>
           <option value="4 seats">4 seats</option>
@@ -150,16 +157,22 @@ session_start(); // Initialize the session
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="cost_per_day">Cost Per Day</label>
-        <select id="cost_per_day" class="form-control">
+        <select id="cost_per_day" class="w-full border rounded px-3 py-2 appearance-none">
           <option value="">All</option>
+          <script>
+            for (let i = 200; i <= 1000; i += 100) {
+              let startPrice = i;
+              let endPrice = i + 99;
+              let optionText = `$${startPrice} - $${endPrice}`;
+              document.write(`<option value="${optionText}">${optionText}</option>`);
+            }
+          </script>
           <!-- Add more cost per day options as needed -->
-          <!-- You can retain your existing JavaScript-generated options here -->
         </select>
       </div>
 
       <!-- Add other input fields for filtering as needed -->
     </aside>
-
 
     <!-- Car Listings -->
     <div class="w-3/4 p-4">
@@ -253,8 +266,7 @@ session_start(); // Initialize the session
     });
   </script>
   <script src="js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <?php include 'includes/footer.php'; ?>
 </body>
+<?php include 'includes/footer.php'; ?>
 
 </html>
