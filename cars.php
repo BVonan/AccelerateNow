@@ -131,7 +131,7 @@ session_start(); // Initialize the session
         </div>
 
         <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="seating_space">Seating Space</label>
+          <label class="block text-gray-700 font-bold mb-2" for="seating_space">Traveling Capacity</label>
           <select id="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <script>
@@ -147,7 +147,7 @@ session_start(); // Initialize the session
         </div>
 
         <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Traveling Capacity</label>
+          <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Seating Space</label>
           <select id="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="2 seats">2 seats</option>
