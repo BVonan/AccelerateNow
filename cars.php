@@ -48,11 +48,11 @@ session_start(); // Initialize the session
   <div class="flex">
     <!-- Aside Filter Section -->
     <aside class="w-1/4 p-4">
-      <form id="filterForm" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+      <form id="filterForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <!-- Filter by Year -->
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
-          <select id="year" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="year" name="year" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="2023">2023</option>
             <!-- Add more years as needed -->
@@ -61,7 +61,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="company">Company</label>
-          <select id="company" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="company" name="company" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="Mercedes-Benz">Mercedes-Benz</option>
             <option value="BMW">BMW</option>
@@ -87,7 +87,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="engine_type">Engine Type</label>
-          <select id="engine_type" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="engine_type" name="engine_type" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="V8">V8</option>
             <option value="Inline-6">Inline-6</option>
@@ -108,7 +108,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="zero_to_sixty">0-60 Time</label>
-          <select id="zero_to_sixty" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="zero_to_sixty" name="zero_to_sixty" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="0-2.4 seconds">0-2.4 seconds</option>
             <option value="2.5-3.4 seconds">2.5-3.4 seconds</option>
@@ -120,7 +120,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="mpg">MPG</label>
-          <select id="mpg" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="mpg" name="mpg" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="8-25 MPG">8-25 MPG</option>
             <option value="26-50 MPG">26-50 MPG</option>
@@ -132,7 +132,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="seating_space">Traveling Capacity</label>
-          <select id="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="seating_space" name="seating_space" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <script>
               for (let i = 100; i <= 700; i += 50) {
@@ -148,7 +148,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Seating Space</label>
-          <select id="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="traveling_capacity" name="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="2 seats">2 seats</option>
             <option value="4 seats">4 seats</option>
@@ -159,7 +159,7 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="cost_per_day">Cost Per Day</label>
-          <select id="cost_per_day" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="cost_per_day" name="cost_per_day" class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <script>
               for (let i = 200; i <= 1000; i += 100) {
@@ -269,6 +269,44 @@ session_start(); // Initialize the session
 
   <!-- Include the Modal -->
   <?php include 'modal.php'; ?>
+
+  <?php
+// Retrieve distinct values for each filter from your database
+
+// Function to retrieve distinct values for a specific column
+function getDistinctValues($columnName, $conn) {
+    $query = "SELECT DISTINCT $columnName FROM cars";
+    $result = $conn->query($query);
+
+    // Output options based on database values
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '<option value="' . $row[$columnName] . '">' . $row[$columnName] . '</option>';
+        }
+    } else {
+        echo '<option value="">No data found</option>';
+    }
+}
+
+// Connect to your database
+$conn = connectToDatabase();
+
+// Populate filters
+$filterColumns = array('year', 'company', 'engine_type', 'zero_to_sixty', 'mpg', 'seating_space', 'traveling_capacity', 'cost_per_day');
+foreach ($filterColumns as $column) {
+    echo '<select id="' . $column . '" name="' . $column . '" class="w-full border rounded px-3 py-2 appearance-none">';
+    echo '<option value="">All</option>'; // Add an option for "All" or an empty value
+
+    // Populate options for the current filter
+    getDistinctValues($column, $conn);
+
+    echo '</select>';
+}
+
+// Close the database connection
+$conn->close();
+?>
+
 
   <!-- Include Tailwind CSS and any other necessary scripts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css">
