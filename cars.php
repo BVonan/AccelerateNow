@@ -4,8 +4,6 @@ session_start(); // Initialize the session
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/header.php'; ?>
-
 <body class="bg-gray-200">
   <!-- header -->
   <?php include 'includes/header.php'; ?>
