@@ -61,4 +61,15 @@ body {
 /* Style the filter options */
 
 
-/* Add more custom styling as needed */
+/* About us */
+    /* Apply blue color to headings */
+    h2 {
+        color: rgba(37, 117, 252, 1); /* Blue color */
+        margin-top: 30px; /* Adjust top margin for headings */
+    }
+
+    /* Adjust spacing and font-size for paragraphs */
+    p {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
