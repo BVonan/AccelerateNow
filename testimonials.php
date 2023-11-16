@@ -37,50 +37,110 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Optionally, redirect the user to a success page or perform other actions after adding the testimonial
 }
 
+// Fetch testimonials from the database
+$sql = "SELECT CustomerName, TestimonialText FROM Testimonials";
+$result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Include necessary meta tags, CSS, and scripts -->
 </head>
+
 <body>
 
-<?php include 'includes/header.php'; ?>
-<!-- Navigation Bar (Bootstrap) -->
-<!-- Your navigation bar code here -->
+    <?php include 'includes/header.php'; ?>
 
-<section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
 
-                        <div class="mb-md-5 mt-md-4 pb-5">
-                            <h2 class="fw-bold mb-2 text-uppercase">Create Testimonial</h2>
-                            <form action="testimonials.php" method="post">
-                                <div class="mb-3">
-                                    <label for="testimonial_text" class="form-label">Your Testimonial:</label>
-                                    <textarea class="form-control" id="testimonial_text" name="testimonial_text" rows="4" required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="rating" class="form-label">Rating (1-5):</label>
-                                    <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit Testimonial</button>
-                            </form>
+    <?php include 'includes/header.php'; ?>
+    <!-- Navigation Bar (Bootstrap) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="fast_car_logo.png" alt="Fast Car Logo" width="30" height="30"
+                        class="d-inline-block align-top">
+                    Accelerate Now
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <?php include 'includes/nav.php'; ?>
+            </div>
+
+            <div class="flex-none flex items-center justify-center">
+                <div class="flex space-x-4">
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        // Display the username and a "Log Out" link if the user is logged in.
+                        echo '<span class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">';
+                        echo $_SESSION['username'];
+                        echo '</span>';
+                        echo '<a href="logout.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log Out</a>';
+                    } else {
+                        // Display "Log In" and "Sign Up" links if the user is not logged in.
+                        echo '<a href="login.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log In</a>';
+                        echo '<a href="signup.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-blue-500 text-white">Sign Up</a>';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                <h2 class="fw-bold mb-2 text-uppercase">Create Testimonial</h2>
+                                <form action="testimonials.php" method="post">
+                                    <div class="mb-3">
+                                        <label for="testimonial_text" class="form-label">Your Testimonial:</label>
+                                        <textarea class="form-control" id="testimonial_text" name="testimonial_text"
+                                            rows="4" required></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="rating" class="form-label">Rating (1-5):</label>
+                                        <input type="number" class="form-control" id="rating" name="rating" min="1"
+                                            max="5" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                                </form>
+                            </div>
+
+                            <!-- Display Testimonials -->
+                            <?php
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<div class="card border-info mb-3" style="max-width: 18rem;">';
+                                    echo '<div class="card-header">' . $row['CustomerName'] . '</div>';
+                                    echo '<div class="card-body">';
+                                    echo '<h5 class="card-title">Info card title</h5>';
+                                    echo '<p class="card-text">' . $row['TestimonialText'] . '</p>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                            } else {
+                                echo "No testimonials available.";
+                            }
+                            ?>
+                            <!-- End Testimonials -->
+
                         </div>
-
-                        <!-- Other content -->
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Include necessary scripts -->
+    <!-- Include necessary scripts -->
 </body>
+
 </html>
