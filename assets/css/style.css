@@ -75,5 +75,8 @@ body {
 }
 
      
-
-    
+/* testimonials */
+/* card */
+.card border-info mb-3{
+    margin: 0 auto;
+}
