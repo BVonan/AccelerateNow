@@ -91,29 +91,31 @@ $result = $conn->query($sql);
         </div>
     </nav>
 
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+    <section class="vh-100">
+      
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+    <div class="card-header"><?php echo $_SESSION['username']; ?></div>
+    <div class="card-body">
+        <h5 class="card-title">Write Your Testimonial</h5>
+        <form method="post" action="">
+            <div class="mb-3">
+                <label for="testimonial_title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="testimonial_title" name="testimonial_title">
+            </div>
+            <div class="mb-3">
+                <label for="testimonial_text" class="form-label">Your Testimonial</label>
+                <textarea class="form-control" id="testimonial_text" name="testimonial_text" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="number" class="form-control" id="rating" name="rating" min="1" max="5">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+        </form>
+    </div>
+</div>
 
-                            <div class="mb-md-5 mt-md-4 pb-5">
-                                <h2 class="fw-bold mb-2 text-uppercase">Create Testimonial</h2>
-                                <form action="testimonials.php" method="post">
-                                    <div class="mb-3">
-                                        <label for="testimonial_text" class="form-label">Your Testimonial:</label>
-                                        <textarea class="form-control" id="testimonial_text" name="testimonial_text"
-                                            rows="4" required></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="rating" class="form-label">Rating (1-5):</label>
-                                        <input type="number" class="form-control" id="rating" name="rating" min="1"
-                                            max="5" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit Testimonial</button>
-                                </form>
-                            </div>
+                            
 
                             <!-- Display Testimonials -->
                             <?php
@@ -133,11 +135,6 @@ $result = $conn->query($sql);
                             ?>
                             <!-- End Testimonials -->
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Include necessary scripts -->
