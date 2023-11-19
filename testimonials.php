@@ -52,7 +52,7 @@ $result = $conn->query($sql);
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="fast_car_logo.png" alt="Fast Car Logo" width="30" height="30"
                     class="d-inline-block align-top">
                 Accelerate Now
