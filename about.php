@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>About Accelerate Now</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Include your custom CSS file -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Any other necessary meta tags or scripts -->
+    <title>About Us</title>
 </head>
-<body>
 
 <?php include 'includes/header.php'; ?>
+
+<body>
 
 <!-- Navigation Bar (Bootstrap) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

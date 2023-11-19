@@ -5,8 +5,12 @@ session_start(); // Initialize the session
 <!DOCTYPE html>
 <html lang="en">
 <body class="bg-gray-200">
-  <!-- header -->
-  <?php include 'includes/header.php'; ?>
+
+<head>
+    <title>Cars</title>
+</head>
+
+<?php include 'includes/header.php'; ?>
 
   <!-- Navigation Bar (Bootstrap) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">

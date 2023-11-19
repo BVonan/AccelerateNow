@@ -45,6 +45,10 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <title>Sign Up</title>
+</head>
+
 <?php include 'includes/header.php'; ?>
 <!-- Navigation Bar (Bootstrap) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

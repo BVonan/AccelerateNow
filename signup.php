@@ -46,7 +46,7 @@ $conn->close();
 <html lang="en">
 
 <head>
-    <!-- Include necessary meta tags and stylesheets -->
+    <title>Sign Up</title>
 </head>
 
 <body>
