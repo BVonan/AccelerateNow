@@ -9,42 +9,6 @@
 
 <body>
 
-<!-- Navigation Bar (Bootstrap) -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="fast_car_logo.png" alt="Fast Car Logo" width="30" height="30" class="d-inline-block align-top">
-            Accelerate Now
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <?php include 'includes/nav.php'; ?>
-        </div>
-
-        <div class="d-flex align-items-center">
-            <div class="flex-shrink-0 me-3">
-                <?php
-                if (isset($_SESSION['username'])) {
-                    // Display the username and a "Log Out" link if the user is logged in.
-                    echo '<span class="text-uppercase fw-semibold">';
-                    echo $_SESSION['username'];
-                    echo '</span>';
-                    echo '<a href="logout.php" class="ms-3 btn btn-outline-dark">Log Out</a>';
-                } else {
-                    // Display "Log In" and "Sign Up" links if the user is not logged in.
-                    echo '<a href="login.php" class="me-3 btn btn-outline-dark">Log In</a>';
-                    echo '<a href="signup.php" class="btn btn-primary">Sign Up</a>';
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-</nav>
-
 <div class="container my-5">
     <h1 class="display-4 text-center mb-5">About Accelerate Now</h1>
 
