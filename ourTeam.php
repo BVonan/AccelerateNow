@@ -10,8 +10,7 @@ session_start(); // Initialize the session
 </head>
 
 <body>
-
-<?php include 'includes/header.php'; ?>
+=
 
     <section class="team-section">
         <div class="container">
@@ -39,9 +38,6 @@ session_start(); // Initialize the session
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JS and other necessary scripts -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
