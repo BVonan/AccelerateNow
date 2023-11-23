@@ -53,7 +53,6 @@ $result = $conn->query($sql);
 
 <?php include 'includes/header.php'; ?>
 
-
 <body>
 
     <!-- Navigation Bar (Bootstrap) -->

@@ -259,18 +259,6 @@ function getDistinctValues($columnName, $conn) {
 // Connect to your database
 $conn = connectToDatabase();
 
-// Populate filters
-$filterColumns = array('year', 'company', 'engine_type', 'zero_to_sixty', 'mpg', 'seating_space', 'traveling_capacity', 'cost_per_day');
-foreach ($filterColumns as $column) {
-    echo '<select id="' . $column . '" name="' . $column . '" class="w-full border rounded px-3 py-2 appearance-none">';
-    echo '<option value="">All</option>'; // Add an option for "All" or an empty value
-
-    // Populate options for the current filter
-    getDistinctValues($column, $conn);
-
-    echo '</select>';
-}
-
 // Close the database connection
 $conn->close();
 ?>
