@@ -21,3 +21,7 @@ Make users have a delete account feature
 make users able to see what car they have rented and which cars theyre currently renting
 
 DONT FORGET PULL REQUEST
+
+11/22/23
+fixed up a few things visually, but need more fixinf in index carasoul, car filter, and css in o
+ur team. also need to make a contact page
