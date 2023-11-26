@@ -13,7 +13,6 @@ session_start(); // Initialize the session
 
 
 <body>
-
     <!-- Hero Section (Tailwind CSS) -->
     <header class="bg-gradient-to-r from-blue-500 to-indigo-800 text-white text-center py-20">
         <h1 class="text-4xl font-semibold">Experience the Ultimate Luxury</h1>
