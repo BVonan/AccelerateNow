@@ -28,12 +28,6 @@ session_start(); // Initialize the session
 
     <!-- Car Carousel with Info -->
     <?php include 'ran_car.php'; ?>
-
-
-    <!-- Footer (Tailwind CSS) -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2023 Accelerate Now</p>
-    </footer>
 </body>
 
 </html>
