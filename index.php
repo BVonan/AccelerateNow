@@ -28,6 +28,9 @@ session_start(); // Initialize the session
 
     <!-- Car Carousel with Info -->
     <?php include 'ran_car.php'; ?>
+
+    <?php include 'includes/footer.php'; ?>
+
 </body>
 
 </html>

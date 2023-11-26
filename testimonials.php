@@ -107,7 +107,7 @@ $result = $conn->query($sql);
         </div>
     </section>
 
-    <!-- Include necessary scripts -->
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>

@@ -303,7 +303,8 @@ $conn->close();
     });
   </script>
   <script src="js/main.js"></script>
+  <?php include 'includes/footer.php'; ?>
+
 </body>
-<?php include 'includes/footer.php'; ?>
 
 </html>

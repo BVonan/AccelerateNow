@@ -43,6 +43,10 @@ session_start(); // Initialize the session
                 style="border:0;"
                 loading="lazy">
             </iframe>
+<br>
+<br>
+            <?php include 'includes/footer.php'; ?>
+
 </body>
 
 </html>
