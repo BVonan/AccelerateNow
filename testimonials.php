@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Replace with your database credentials
 $host = "localhost:3306";
 $username = "root";
 $password = "bohnnY06!";
@@ -35,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssi", $customerName, $testimonialTitle, $testimonialText, $rating);
     $stmt->execute();
     $stmt->close();
-    // Optionally, redirect the user to a success page or perform other actions after adding the testimonial
 }
 
 // Fetch testimonials from the database
@@ -111,3 +109,5 @@ $result = $conn->query($sql);
 </body>
 
 </html>
+
+

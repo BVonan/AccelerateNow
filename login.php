@@ -46,7 +46,7 @@ $conn->close();
 <html lang="en">
 
 <head>
-    <title>Sign Up</title>
+    <title>Log In</title>
 </head>
 
 <?php include 'includes/header.php'; ?>
@@ -66,6 +66,8 @@ $conn->close();
                                     echo '<p style="color: red;">' . $loginError . '</p>';
                                 }
                                 ?>
+                                <!-- Disclaimer for non-logged-in users -->
+                                <p style="color: yellow;">You must be logged in to make a testimonial.</p>
                                 <form action="login.php" method="post">
                                     <div class="form-outline form-white mb-4">
                                         <label for="username" class="form-label">Username:</label>
