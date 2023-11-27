@@ -4,13 +4,14 @@ session_start(); // Initialize the session
 
 <!DOCTYPE html>
 <html lang="en">
+
 <body class="bg-gray-200">
 
-<head>
+  <head>
     <title>Cars</title>
-</head>
+  </head>
 
-<?php include 'includes/header.php'; ?>
+  <?php include 'includes/header.php'; ?>
 
   <!-- Main Content -->
   <div class="flex">
@@ -116,7 +117,8 @@ session_start(); // Initialize the session
 
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="traveling_capacity">Seating Space</label>
-          <select id="traveling_capacity" name="traveling_capacity" class="w-full border rounded px-3 py-2 appearance-none">
+          <select id="traveling_capacity" name="traveling_capacity"
+            class="w-full border rounded px-3 py-2 appearance-none">
             <option value="">All</option>
             <option value="2 seats">2 seats</option>
             <option value="4 seats">4 seats</option>
@@ -155,40 +157,41 @@ session_start(); // Initialize the session
         include 'assets/config/db.php';
 
         // Function to fetch and display cars
-        function fetchAndDisplayCars($yearFilter, $companyFilter, $engineTypeFilter, $zeroToSixtyFilter, $mpgFilter, $seatingSpaceFilter, $travelingCapacityFilter, $costPerDayFilter) {
+        function fetchAndDisplayCars($yearFilter, $companyFilter, $engineTypeFilter, $zeroToSixtyFilter, $mpgFilter, $seatingSpaceFilter, $travelingCapacityFilter, $costPerDayFilter)
+        {
           $conn = connectToDatabase();
-        
+
           $sql = "SELECT car_id, name, year, image, company, engine_type, zero_to_sixty, mpg, seating_space, traveling_capacity, cost_per_day, fuel_type FROM cars WHERE 1";
-        
+
           // Apply filters based on user selections
           if (!empty($yearFilter)) {
             $sql .= " AND year = " . intval($yearFilter);
           }
-        
+
           if (!empty($companyFilter)) {
             $sql .= " AND company = '" . $companyFilter . "'";
           }
-        
+
           if (!empty($engineTypeFilter)) {
             $sql .= " AND engine_type = '" . $engineTypeFilter . "'";
           }
-        
+
           if (!empty($zeroToSixtyFilter)) {
             $sql .= " AND zero_to_sixty = '" . $zeroToSixtyFilter . "'";
           }
-        
+
           if (!empty($mpgFilter)) {
             $sql .= " AND mpg = '" . $mpgFilter . "'";
           }
-        
+
           if (!empty($seatingSpaceFilter)) {
             $sql .= " AND seating_space = '" . $seatingSpaceFilter . "'";
           }
-        
+
           if (!empty($travelingCapacityFilter)) {
             $sql .= " AND traveling_capacity = '" . $travelingCapacityFilter . "'";
           }
-        
+
           if (!empty($costPerDayFilter)) {
             // Extract the price range from the filter
             $priceRange = explode('-', $costPerDayFilter);
@@ -196,16 +199,39 @@ session_start(); // Initialize the session
             $endPrice = isset($priceRange[1]) ? intval(substr($priceRange[1], 1)) : PHP_INT_MAX;
             $sql .= " AND cost_per_day >= " . $startPrice . " AND cost_per_day <= " . $endPrice;
           }
-        
+
           // Add more filters as needed
         
-          $result = $conn->query($sql);
+          // $result = $conn->query($sql);
         
+          // if ($result->num_rows > 0) {
+          //   while ($row = $result->fetch_assoc()) {
+          //     echo '<div class="bg-white rounded-lg p-4">';
+          //     // display images
+          //     echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="car" class="w-full h-48 object-cover">';
+          //     echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
+          //     echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
+          //     echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
+          //     echo '</div>';
+          //   }
+          // } else {
+          //   echo "No cars available.";
+          // }
+        
+          $result = $conn->query($sql);
+
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo '<div class="bg-white rounded-lg p-4">';
-              // display images
-              echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Car" class="w-full h-48 object-cover">';
+
+              if (!empty($row['image'])) {
+                // Display images
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="car" class="w-full h-48 object-cover">';
+              } else {
+                // Handle case where image is null or empty
+                echo '<img src="path_to_default_image.jpg" alt="default car image" class="w-full h-48 object-cover">';
+              }
+
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
               echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
@@ -214,10 +240,11 @@ session_start(); // Initialize the session
           } else {
             echo "No cars available.";
           }
-        
+
+
           $conn->close();
         }
-        
+
         // Retrieve the selected filters
         $yearFilter = isset($_GET['year']) ? intval($_GET['year']) : '';
         $companyFilter = isset($_GET['company']) ? $_GET['company'] : '';
@@ -227,10 +254,10 @@ session_start(); // Initialize the session
         $seatingSpaceFilter = isset($_GET['seating_space']) ? $_GET['seating_space'] : '';
         $travelingCapacityFilter = isset($_GET['traveling_capacity']) ? $_GET['traveling_capacity'] : '';
         $costPerDayFilter = isset($_GET['cost_per_day']) ? $_GET['cost_per_day'] : '';
-        
+
         // Call the function with all the filters
         fetchAndDisplayCars($yearFilter, $companyFilter, $engineTypeFilter, $zeroToSixtyFilter, $mpgFilter, $seatingSpaceFilter, $travelingCapacityFilter, $costPerDayFilter);
-        
+
         ?>
       </div>
     </div>
@@ -240,29 +267,30 @@ session_start(); // Initialize the session
   <?php include 'modal.php'; ?>
 
   <?php
-// Retrieve distinct values for each filter from your database
-
-// Function to retrieve distinct values for a specific column
-function getDistinctValues($columnName, $conn) {
+  // Retrieve distinct values for each filter from your database
+  
+  // Function to retrieve distinct values for a specific column
+  function getDistinctValues($columnName, $conn)
+  {
     $query = "SELECT DISTINCT $columnName FROM cars";
     $result = $conn->query($query);
 
     // Output options based on database values
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo '<option value="' . $row[$columnName] . '">' . $row[$columnName] . '</option>';
-        }
+      while ($row = $result->fetch_assoc()) {
+        echo '<option value="' . $row[$columnName] . '">' . $row[$columnName] . '</option>';
+      }
     } else {
-        echo '<option value="">No data found</option>';
+      echo '<option value="">No data found</option>';
     }
-}
+  }
 
-// Connect to your database
-$conn = connectToDatabase();
+  // Connect to your database
+  $conn = connectToDatabase();
 
-// Close the database connection
-$conn->close();
-?>
+  // Close the database connection
+  $conn->close();
+  ?>
 
 
   <!-- Include Tailwind CSS and any other necessary scripts -->
