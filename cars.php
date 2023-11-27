@@ -204,7 +204,8 @@ session_start(); // Initialize the session
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo '<div class="bg-white rounded-lg p-4">';
-              echo '<img src="' . $row['image'] . '" alt="Car" class="w-full h-48 object-cover">';
+              // display images
+              echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Car" class="w-full h-48 object-cover">';
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
               echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
