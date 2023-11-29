@@ -10,6 +10,7 @@ Accelerate Now is a web application for luxury and supercar rentals. It allows u
 - **Bootstrap:** Used for the navigation bar and other components.
 - **JavaScript:** Used for client-side scripting.
 - **MySQL:** The database system for storing and retrieving data.
+- **Api** Google maps API used in the contact page of the busniness
 - **Herd:** The server used to run the project.
 
 ## Project Structure
