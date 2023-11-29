@@ -1,0 +1,105 @@
+car_id,image,year,name,company,engine_type,zero_to_sixty,mpg,fuel_type,seating_space,seats,traveling_capacity,cost_per_day
+1,mercedes_s_class.jpg,2023,"Mercedes-Benz S-Class",Mercedes-Benz,V8,"4.4 seconds",27,Gasoline,"5 seats",5,"500 miles",250.00
+2,bmw_7_series.jpg,2023,"BMW 7 Series",BMW,Inline-6,"4.3 seconds",29,Gasoline,"5 seats",5,"480 miles",240.00
+3,audi_a8.jpg,2023,"Audi A8",Audi,V6,"4.8 seconds",27,Gasoline,"5 seats",5,"460 miles",230.00
+4,lexus_ls.jpg,2023,"Lexus LS",Lexus,V6,"5.1 seconds",25,Gasoline,"5 seats",5,"440 miles",220.00
+5,porsche_panamera.jpg,2023,"Porsche Panamera",Porsche,V6,"3.5 seconds",23,Gasoline,"4 seats",4,"420 miles",300.00
+6,tesla_model_s.jpg,2023,"Tesla Model S",Tesla,Electric,"2.3 seconds",120,Electric,"5 seats",5,"350 miles",300.00
+7,porsche_taycan.jpg,2023,"Porsche Taycan",Porsche,Electric,"2.6 seconds",100,Electric,"4 seats",4,"320 miles",280.00
+8,mclaren_p1.jpg,2023,"McLaren P1",McLaren,Hybrid,"2.7 seconds",18,Hybrid,"2 seats",2,"250 miles",500.00
+9,bugatti_chiron.jpg,2023,"Bugatti Chiron",Bugatti,Gasoline,"2.5 seconds",9,Gasoline,"2 seats",2,"200 miles",1000.00
+10,rolls_royce_ghost.jpg,2023,"Rolls-Royce Ghost",Rolls-Royce,V12,"4.8 seconds",15,Gasoline,"5 seats",5,"350 miles",400.00
+11,bmw_i8.jpg,2023,"BMW i8",BMW,Hybrid,"4.2 seconds",28,Hybrid,"2 seats",2,"350 miles",250.00
+12,lamborghini_veneno.jpg,2023,"Lamborghini Veneno",Lamborghini,Gasoline,"2.8 seconds",10,Gasoline,"2 seats",2,"180 miles",750.00
+13,audi_e-tron.jpg,2023,"Audi e-tron",Audi,Electric,"3.9 seconds",80,Electric,"5 seats",5,"280 miles",280.00
+14,jaguar_i-pace.jpg,2023,"Jaguar I-PACE",Jaguar,Electric,"4.5 seconds",76,Electric,"5 seats",5,"300 miles",290.00
+15,mercedes_amg_gtr.jpg,2023,"Mercedes-AMG GT R",Mercedes-Benz,V8,"3.5 seconds",15,Gasoline,"2 seats",2,"220 miles",400.00
+16,aston_martin_vanquish.jpg,2023,"Aston Martin Vanquish","Aston Martin",V12,"3.2 seconds",15,Gasoline,"2 seats",2,"240 miles",450.00
+17,ferrari_812_superfast.jpg,2023,"Ferrari 812 Superfast",Ferrari,V12,"2.9 seconds",12,Gasoline,"2 seats",2,"250 miles",500.00
+18,porsche_911_turbo.jpg,2023,"Porsche 911 Turbo",Porsche,Flat-6,"2.7 seconds",21,Gasoline,"4 seats",4,"320 miles",300.00
+19,bentley_continental_gt.jpg,2023,"Bentley Continental GT",Bentley,W12,"3.6 seconds",17,Gasoline,"4 seats",4,"320 miles",350.00
+20,koenigsegg_agera.jpg,2023,"Koenigsegg Agera",Koenigsegg,V8,"2.9 seconds",15,Gasoline,"2 seats",2,"220 miles",750.00
+21,lexus_lc.jpg,2023,"Lexus LC",Lexus,V8,"4.4 seconds",24,Gasoline,"4 seats",4,"300 miles",300.00
+22,audi_r8.jpg,2023,"Audi R8",Audi,V10,"3.1 seconds",18,Gasoline,"2 seats",2,"240 miles",400.00
+23,porsche_cayman.jpg,2023,"Porsche 718 Cayman",Porsche,Flat-4,"4.9 seconds",24,Gasoline,"2 seats",2,"280 miles",280.00
+24,mclaren_720s.jpg,2023,"McLaren 720S",McLaren,V8,"2.8 seconds",18,Gasoline,"2 seats",2,"220 miles",500.00
+25,bugatti_veyron.jpg,2023,"Bugatti Veyron",Bugatti,Gasoline,"2.5 seconds",10,Gasoline,"2 seats",2,"180 miles",1000.00
+26,rolls_royce_wraith.jpg,2023,"Rolls-Royce Wraith",Rolls-Royce,V12,"4.4 seconds",15,Gasoline,"4 seats",4,"350 miles",400.00
+27,mclaren_senna.jpg,2023,"McLaren Senna",McLaren,V8,"2.8 seconds",18,Gasoline,"2 seats",2,"220 miles",500.00
+28,lamborghini_huracan.jpg,2023,"Lamborghini Huracan",Lamborghini,V10,"2.9 seconds",14,Gasoline,"2 seats",2,"220 miles",400.00
+29,bentley_flying_spur.jpg,2023,"Bentley Flying Spur",Bentley,V8,"3.8 seconds",20,Gasoline,"5 seats",5,"340 miles",350.00
+30,pagani_huayra.jpg,2023,"Pagani Huayra",Pagani,V12,"2.8 seconds",11,Gasoline,"2 seats",2,"250 miles",750.00
+31,audi_rs7.jpg,2023,"Audi RS7",Audi,V8,"3.4 seconds",22,Gasoline,"5 seats",5,"320 miles",350.00
+32,aston_martin_db11.jpg,2023,"Aston Martin DB11","Aston Martin",V8,"3.6 seconds",18,Gasoline,"4 seats",4,"320 miles",300.00
+33,ferrari_f8_tributo.jpg,2023,"Ferrari F8 Tributo",Ferrari,V8,"2.9 seconds",16,Gasoline,"2 seats",2,"240 miles",500.00
+34,porsche_panamera_turbo.jpg,2023,"Porsche Panamera Turbo",Porsche,V8,"3.3 seconds",22,Gasoline,"4 seats",4,"320 miles",350.00
+35,rolls_royce_cullinan.jpg,2023,"Rolls-Royce Cullinan",Rolls-Royce,V12,"4.8 seconds",12,Gasoline,"5 seats",5,"340 miles",400.00
+36,bugatti_divo.jpg,2023,"Bugatti Divo",Bugatti,W16,"2.4 seconds",8,Gasoline,"2 seats",2,"250 miles",1000.00
+37,lamborghini_urus.jpg,2023,"Lamborghini Urus",Lamborghini,V8,"3.6 seconds",14,Gasoline,"5 seats",5,"300 miles",400.00
+38,bentley_bentayga.jpg,2023,"Bentley Bentayga",Bentley,V8,"4.5 seconds",16,Gasoline,"5 seats",5,"320 miles",350.00
+39,mclaren_gt.jpg,2023,"McLaren GT",McLaren,V8,"3.2 seconds",20,Gasoline,"2 seats",2,"240 miles",450.00
+40,aston_martin_vantage.jpg,2023,"Aston Martin Vantage","Aston Martin",V8,"3.5 seconds",18,Gasoline,"2 seats",2,"260 miles",300.00
+41,ferrari_portofino.jpg,2023,"Ferrari Portofino",Ferrari,V8,"3.2 seconds",20,Gasoline,"2 seats",2,"250 miles",350.00
+42,porsche_911_gt3.jpg,2023,"Porsche 911 GT3",Porsche,Flat-6,"3.2 seconds",17,Gasoline,"2 seats",2,"280 miles",400.00
+43,rolls_royce_dawn.jpg,2023,"Rolls-Royce Dawn",Rolls-Royce,V12,"4.4 seconds",14,Gasoline,"4 seats",4,"300 miles",450.00
+44,koenigsegg_regera.jpg,2023,"Koenigsegg Regera",Koenigsegg,V8,"2.7 seconds",12,Gasoline,"2 seats",2,"220 miles",1000.00
+45,lexus_ux.jpg,2023,"Lexus UX",Lexus,Hybrid,"7.3 seconds",42,Hybrid,"5 seats",5,"450 miles",200.00
+46,audi_q7.jpg,2023,"Audi Q7",Audi,V6,"5.6 seconds",22,Gasoline,"7 seats",7,"360 miles",230.00
+47,bmw_x5.jpg,2023,"BMW X5",BMW,Inline-6,"5.3 seconds",21,Gasoline,"5 seats",5,"340 miles",220.00
+48,volvo_xc90.jpg,2023,"Volvo XC90",Volvo,Inline-4,"6.1 seconds",25,Gasoline,"7 seats",7,"380 miles",210.00
+49,mercedes_gls.jpg,2023,"Mercedes-Benz GLS",Mercedes-Benz,V8,"4.8 seconds",18,Gasoline,"7 seats",7,"350 miles",240.00
+50,audi_q5.jpg,2023,"Audi Q5",Audi,Inline-4,"6.2 seconds",28,Gasoline,"5 seats",5,"380 miles",220.00
+51,lexus_nx.jpg,2023,"Lexus NX",Lexus,Inline-4,"7.0 seconds",30,Hybrid,"5 seats",5,"400 miles",210.00
+52,tesla_model_y.jpg,2023,"Tesla Model Y",Tesla,Electric,"3.9 seconds",120,Electric,"5 seats",5,"350 miles",250.00
+53,volkswagen_touareg.jpg,2023,"Volkswagen Touareg",Volkswagen,V6,"6.2 seconds",24,Diesel,"5 seats",5,"380 miles",220.00
+54,jaguar_f-pace.jpg,2023,"Jaguar F-PACE",Jaguar,Inline-4,"6.4 seconds",30,Gasoline,"5 seats",5,"400 miles",230.00
+55,bmw_x7.jpg,2023,"BMW X7",BMW,V8,"5.1 seconds",22,Gasoline,"7 seats",7,"350 miles",240.00
+56,audi_q3.jpg,2023,"Audi Q3",Audi,Inline-4,"7.1 seconds",33,Gasoline,"5 seats",5,"380 miles",210.00
+57,lexus_rx.jpg,2023,"Lexus RX",Lexus,V6,"7.0 seconds",29,Gasoline,"5 seats",5,"400 miles",220.00
+59,rolls_royce_phantom.jpg,2023,"Rolls-Royce Phantom",Rolls-Royce,V12,"4.3 seconds",15,Gasoline,"5 seats",5,"350 miles",500.00
+61,ferrari_enzo.jpg,2023,"Ferrari Enzo",Ferrari,V12,"3.1 seconds",14,Gasoline,"2 seats",2,"240 miles",600.00
+63,aston_martin_db9.jpg,2023,"Aston Martin DB9","Aston Martin",V12,"4.1 seconds",18,Gasoline,"2 seats",2,"300 miles",450.00
+66,rolls_royce_cullinan_black_badge.jpg,2023,"Rolls-Royce Cullinan Black Badge",Rolls-Royce,V12,"4.7 seconds",13,Gasoline,"5 seats",5,"320 miles",600.00
+67,ferrari_la_ferrari.jpg,2023,"Ferrari LaFerrari",Ferrari,V12,"2.4 seconds",13,Hybrid,"2 seats",2,"200 miles",1200.00
+68,lamborghini_centenario.jpg,2023,"Lamborghini Centenario",Lamborghini,V12,"2.8 seconds",14,Gasoline,"2 seats",2,"230 miles",1000.00
+69,pagani_zonda.jpg,2023,"Pagani Zonda",Pagani,V12,"3.3 seconds",11,Gasoline,"2 seats",2,"220 miles",900.00
+70,mclaren_675lt.jpg,2023,"McLaren 675LT",McLaren,V8,"2.9 seconds",17,Gasoline,"2 seats",2,"240 miles",800.00
+72,aston_martin_one_77.jpg,2023,"Aston Martin One-77","Aston Martin",V12,"3.4 seconds",15,Gasoline,"2 seats",2,"250 miles",700.00
+73,koenigsegg_jesko.jpg,2023,"Koenigsegg Jesko",Koenigsegg,V8,"2.6 seconds",11,Gasoline,"2 seats",2,"210 miles",1000.00
+74,pagani_huayra_roadster.jpg,2023,"Pagani Huayra Roadster",Pagani,V12,"2.9 seconds",12,Gasoline,"2 seats",2,"230 miles",900.00
+76,lamborghini_huracan_evo.jpg,2023,"Lamborghini Huracan Evo",Lamborghini,V10,"2.9 seconds",14,Gasoline,"2 seats",2,"230 miles",700.00
+79,audi_e-tron_gt.jpg,2023,"Audi e-tron GT",Audi,Electric,"3.5 seconds",90,Electric,"5 seats",5,"250 miles",700.00
+
+
+
+Table: cars
+
+Columns:
+car_id
+int AI PK
+image
+varchar(255)
+year
+int
+name
+varchar(255)
+company
+varchar(255)
+engine_type
+varchar(50)
+zero_to_sixty
+varchar(20)
+mpg
+int
+fuel_type
+varchar(50)
+seating_space
+varchar(50)
+seats
+int
+traveling_capacity
+varchar(50)
+cost_per_day
+decimal(10,2)
+
+
