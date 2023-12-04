@@ -1,13 +1,17 @@
+<?php
+session_start(); // Initialize the session
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Our Team</title>
 </head>
 
 <body>
-    <?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
 
     <div class="container py-4">
         <div class="row">
@@ -35,7 +39,6 @@
             </div>
         </div>
     </div>
-
     <?php include 'includes/footer.php'; ?>
 
 </body>

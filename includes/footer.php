@@ -2,5 +2,5 @@
 
 <!-- Footer (Tailwind CSS) -->
 <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2023 Accelerate Now</p>
-    </footer>
+    <p>&copy; 2023 Accelerate Now</p>
+</footer>
