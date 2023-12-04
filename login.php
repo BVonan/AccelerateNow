@@ -56,38 +56,30 @@ $conn->close();
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
-
-                            <div class="mb-md-5 mt-md-4 pb-5">
-                                <h2 class="fw-bold mb-2 text-uppercase">Log In</h2>
-                                <?php
-                                if (isset($loginError)) {
-                                    echo '<p style="color: red;">' . $loginError . '</p>';
-                                }
-                                ?>
-                                <!-- Disclaimer for non-logged-in users -->
-                                <p style="color: yellow;">You must be logged in to make a testimonial.</p>
-                                <form action="login.php" method="post">
-                                    <div class="form-outline form-white mb-4">
-                                        <label for="username" class="form-label">Username:</label>
-                                        <input type="text" id="typeEmailX" class="form-control form-control-lg"
-                                            name="username" required>
-                                    </div>
-                                    <div class="form-outline form-white mb-4">
-                                        <label for="password" class="form-label">Password:</label>
-                                        <input type="password" id="typePasswordX" class="form-control form-control-lg"
-                                            name="password" required>
-                                    </div>
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Log In</button>
-                                </form>
+                    <div class="card text-center">
+                        <div class="card-body p-5">
+                            <h2 class="card-title fw-bold mb-4 text-uppercase">Log In</h2>
+                            <?php
+                            if (isset($loginError)) {
+                                echo '<p class="text-danger">' . $loginError . '</p>';
+                            }
+                            ?>
+                            <!-- Disclaimer for non-logged-in users -->
+                            <p class="text-warning">You must be logged in to make a testimonial.</p>
+                            <form action="login.php" method="post">
+                                <div class="mb-4">
+                                    <label for="username" class="form-label">Username:</label>
+                                    <input type="text" id="username" class="form-control form-control-lg" name="username" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="password" id="password" class="form-control form-control-lg" name="password" required>
+                                </div>
+                                <button class="btn btn-primary btn-lg px-5" type="submit">Log In</button>
+                            </form>
+                            <div class="mt-4">
+                                <p class="mb-0">Don't have an account? <a href="#!" class="fw-bold">Sign Up</a></p>
                             </div>
-
-                            <div>
-                                <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign
-                                        Up</a></p>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -95,5 +87,4 @@ $conn->close();
         </div>
     </section>
 </body>
-
 </html>
