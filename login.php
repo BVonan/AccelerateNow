@@ -52,7 +52,7 @@ $conn->close();
 <?php include 'includes/header.php'; ?>
 
 <body>
-    <section class="gradient-custom">
+    <section class="vh-100 gradient-custom">
         <div>
             <div class="row d-flex justify-content-center align-items-center vh-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -65,7 +65,8 @@ $conn->close();
                             }
                             ?>
                             <!-- Disclaimer for non-logged-in users -->
-                            <p class="text-warning">You must be logged in to make a testimonial.</p>
+                            <p class="text">You must be logged in to make a testimonial.</p>
+                            <br>
                             <form action="login.php" method="post">
                                 <div class="mb-4">
                                     <label for="username" class="form-label">Username:</label>
@@ -88,6 +89,8 @@ $conn->close();
             </div>
         </div>
     </section>
+    <?php include 'includes/footer.php'; ?>
+
 </body>
 
 </html>
