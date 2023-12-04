@@ -50,19 +50,40 @@ $conn->close();
 </head>
 
 <body>
-    <h2>Sign Up</h2>
-    <form action="signup.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-
-        <input type="submit" value="Sign Up">
-    </form>
+    <section class="vh-100 gradient-custom">
+        <div class="row d-flex justify-content-center align-items-center vh-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card text-center">
+                    <div class="card-body p-5">
+                        <h2 class="card-title fw-bold mb-4 text-uppercase">Sign Up</h2>
+                        <!-- Form for Sign Up -->
+                        <form action="signup.php" method="post">
+                            <div class="mb-4">
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" id="username" class="form-control form-control-lg"
+                                    name="username" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" class="form-control form-control-lg"
+                                    name="email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" id="password" class="form-control form-control-lg"
+                                    name="password" required>
+                            </div>
+                            <button class="btn btn-primary btn-lg px-5" type="submit">Sign Up</button>
+                        </form>
+                        <div class="mt-4">
+                            <p class="mb-0">Already have an account? <a href="login.php" class="fw-bold">Log In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>
