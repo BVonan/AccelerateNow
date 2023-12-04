@@ -52,9 +52,9 @@ $conn->close();
 <?php include 'includes/header.php'; ?>
 
 <body>
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
+    <section class="gradient-custom">
+        <div>
+            <div class="row d-flex justify-content-center align-items-center vh-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card text-center">
                         <div class="card-body p-5">
@@ -69,11 +69,13 @@ $conn->close();
                             <form action="login.php" method="post">
                                 <div class="mb-4">
                                     <label for="username" class="form-label">Username:</label>
-                                    <input type="text" id="username" class="form-control form-control-lg" name="username" required>
+                                    <input type="text" id="username" class="form-control form-control-lg"
+                                        name="username" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="password" class="form-label">Password:</label>
-                                    <input type="password" id="password" class="form-control form-control-lg" name="password" required>
+                                    <input type="password" id="password" class="form-control form-control-lg"
+                                        name="password" required>
                                 </div>
                                 <button class="btn btn-primary btn-lg px-5" type="submit">Log In</button>
                             </form>
@@ -87,4 +89,5 @@ $conn->close();
         </div>
     </section>
 </body>
+
 </html>
