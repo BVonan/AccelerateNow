@@ -49,37 +49,34 @@ $conn->close();
     <title>Sign Up</title>
 </head>
 
-<body>
-    <section class="vh-100 gradient-custom">
-        <div class="row d-flex justify-content-center align-items-center vh-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card text-center">
-                    <div class="card-body p-5">
-                        <h2 class="card-title fw-bold mb-4 text-uppercase">Sign Up</h2>
-                        <!-- Form for Sign Up -->
-                        <form action="signup.php" method="post">
-                            <div class="mb-4">
-                                <label for="username" class="form-label">Username:</label>
-                                <input type="text" id="username" class="form-control form-control-lg"
-                                    name="username" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" id="email" class="form-control form-control-lg"
-                                    name="email" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="password" class="form-label">Password:</label>
-                                <input type="password" id="password" class="form-control form-control-lg"
-                                    name="password" required>
-                            </div>
-                            <button class="btn btn-primary btn-lg px-5" type="submit">Sign Up</button>
-                        </form>
-                        <div class="mt-4">
-                            <p class="mb-0">Already have an account? <a href="login.php" class="fw-bold">Log In</a></p>
-                        </div>
-                    </div>
+<?php include 'includes/header.php'; ?>
+
+
+<body class=>
+    <section class="vh-100 gradient-custom flex justify-center items-center">
+        <div class="max-w-md w-full mx-auto p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-4">Sign Up</h2>
+            <!-- Form for Sign Up -->
+            <form action="signup.php" method="post" class="space-y-4">
+                <div>
+                    <label for="username" class="block font-medium">Username:</label>
+                    <input type="text" id="username" class="w-full border rounded-lg px-3 py-2" name="username"
+                        required>
                 </div>
+                <div>
+                    <label for="email" class="block font-medium">Email:</label>
+                    <input type="email" id="email" class="w-full border rounded-lg px-3 py-2" name="email" required>
+                </div>
+                <div>
+                    <label for="password" class="block font-medium">Password:</label>
+                    <input type="password" id="password" class="w-full border rounded-lg px-3 py-2" name="password"
+                        required>
+                </div>
+                <button class="bg-blue-500 text-white rounded-lg px-5 py-2 hover:bg-blue-600 transition-all"
+                    type="submit">Sign Up</button>
+            </form>
+            <div class="mt-4 text-center">
+                <p>Already have an account? <a href="login.php" class="font-semibold text-blue-500">Log In</a></p>
             </div>
         </div>
     </section>
