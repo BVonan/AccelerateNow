@@ -35,9 +35,8 @@ session_start(); // Initialize the session
             </div>
         </div>
     </div>
-
-    <?php include 'includes/footer.php'; ?>
 </body>
+<?php include 'includes/footer.php'; ?>
 
 
 </html>
