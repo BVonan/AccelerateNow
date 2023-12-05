@@ -102,3 +102,9 @@ body {
     color:rgba(37, 117, 252, 1);
 }
 
+.testimonial {
+    background-image: url('https://robbreport.com/wp-content/uploads/2018/10/cm.jpg?w=1000');
+    /* Other background properties */
+    background-size: cover;
+    background-position: center;
+}
