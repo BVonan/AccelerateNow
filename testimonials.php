@@ -51,56 +51,64 @@ $result = $conn->query($sql);
 
 <?php include 'includes/header.php'; ?>
 
-<body>
+<body class="bg-gray-100 testimonial">
 
-    <!-- Navigation Bar (Bootstrap) -->
+    <!-- Navigation Bar (Tailwind) -->
     <!-- Your navigation bar code here -->
 
-    <section class="vh-100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card border-info mb-3">
-                        <div class="card-header">
+    <section class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mx-auto max-w-md">
+                    <div class="bg-white border border-blue-500 rounded p-4">
+                        <div class="font-bold mb-2 cn">
                             <?php echo $_SESSION['username']; ?>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Write Your Testimonial</h5>
+                        <div class="mb-4">
+                            <h5 class="text-lg font-bold mb-2">Write Your Testimonial</h5>
                             <form method="post" action="">
-                                <div class="mb-3">
-                                    <label for="testimonial_title" class="form-label">Title</label>
-                                    <input type="text" class="form-control" id="testimonial_title"
-                                        name="testimonial_title">
+                                <div class="mb-4">
+                                    <label for="testimonial_title" class="block mb-1">Title</label>
+                                    <input type="text"
+                                        class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-blue-500"
+                                        id="testimonial_title" name="testimonial_title">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="testimonial_text" class="form-label">Your Testimonial</label>
-                                    <textarea class="form-control" id="testimonial_text" name="testimonial_text"
-                                        rows="3"></textarea>
+                                <div class="mb-4">
+                                    <label for="testimonial_text" class="block mb-1">Your Testimonial</label>
+                                    <textarea
+                                        class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-blue-500"
+                                        id="testimonial_text" name="testimonial_text" rows="3"></textarea>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="rating" class="form-label">Rating</label>
-                                    <input type="number" class="form-control" id="rating" name="rating" min="1" max="5">
+                                <div class="mb-4">
+                                    <label for="rating" class="block mb-1">Rating</label>
+                                    <input type="number"
+                                        class="border border-gray-300 rounded w-full py-2 px-3 focus:outline-none focus:border-blue-500"
+                                        id="rating" name="rating" min="1" max="5">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                                <button type="submit"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit
+                                    Testimonial</button>
                             </form>
                         </div>
                     </div>
-                    <?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div class="card border-info mb-3">';
-                            echo '<div class="card-header">' . $row['CustomerName'] . '</div>';
-                            echo '<div class="card-body">';
-                            echo '<h5 class="card-title">' . $row['TestimonialTitle'] . '</h5>';
-                            echo '<p class="card-text">' . $row['TestimonialText'] . '</p>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                    } else {
-                        echo "No testimonials available.";
-                    }
-                    ?>
                 </div>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="mx-auto max-w-md">';
+                        echo '<div class="bg-white border border-blue-500 rounded p-4 mb-4">';
+                        echo '<div class="font-bold mb-2 cn">' . $row['CustomerName'] . '</div>';
+                        echo '<div>';
+                        echo '<h5 class="text-lg font-bold mb-2">' . $row['TestimonialTitle'] . '</h5>';
+                        echo '<p class="text-gray-700">' . $row['TestimonialText'] . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "<p class='text-center'>No testimonials available.</p>";
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -109,5 +117,3 @@ $result = $conn->query($sql);
 </body>
 
 </html>
-
-
