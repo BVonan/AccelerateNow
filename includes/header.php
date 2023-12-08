@@ -33,9 +33,8 @@
                     <?php
                     if (isset($_SESSION['username'])) {
                         // Display the username and a "Log Out" link if the user is logged in.
-                        // echo '<span class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">';
-                        echo '<a href="/profile.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Link Text</a>';
-                        echo $_SESSION['username'];
+                        echo '<span class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">';
+                        echo '<a href="/profile.php">' . $_SESSION['username'] . '</a>';
                         echo '</span>';
                         echo '<a href="logout.php" class="px-6 h-12 uppercase font-semibold tracking-wider bg-transparent text-black">Log Out</a>';
                     } else {
