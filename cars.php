@@ -224,13 +224,14 @@ session_start(); // Initialize the session
             while ($row = $result->fetch_assoc()) {
               echo '<div class="bg-white rounded-lg p-4">';
 
-              if (!empty($row['image'])) {
-                // Display images
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="car" class="w-full h-48 object-cover">';
+              // Display images
+              if (!empty($row['cloudinary_id'])) {
+                echo '<img src="' . $row['cloudinary_id'] . '" alt="car" class="w-full h-48 object-cover">';
               } else {
                 // Handle case where image is null or empty
                 echo '<img src="path_to_default_image.jpg" alt="default car image" class="w-full h-48 object-cover">';
               }
+
 
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
