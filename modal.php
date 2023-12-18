@@ -24,7 +24,7 @@
                 <div class="right-details">
                     <p><strong>Fuel Type:</strong> <span id="carFuelType"></span></p>
                     <p><strong>Seating Space:</strong> <span id="carSeatingSpace"></span></p>
-                    <p><strong>Seats:</strong> <span id="carSeats"></span></p>
+                    <!-- <p><strong>Seats:</strong> <span id="carSeats"></span></p> -->
                     <p><strong>Traveling Capacity:</strong> <span id="carTravelingCapacity"></span></p>
                     <p><strong>Cost per Day:</strong> $<span id="carCostPerDay"></span></p>
                     <!-- Add more car details -->
@@ -70,7 +70,7 @@
                     $("#carMPG").text(carDetails.mpg);
                     $("#carFuelType").text(carDetails.fuel_type);
                     $("#carSeatingSpace").text(carDetails.seating_space);
-                    $("#carSeats").text(carDetails.traveling_capacity);
+                    $("#carTravelingCapacity").text(carDetails.traveling_capacity);
                     $("#carCostPerDay").text(carDetails.cost_per_day);
 
                     // Show the modal

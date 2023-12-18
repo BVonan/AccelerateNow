@@ -228,7 +228,7 @@ session_start(); // Initialize the session
                 echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="car" class="w-full h-48 object-cover">';
               } else {
                 // Handle case where image is null or empty
-                echo '<img src="path_to_default_image.jpg" alt="hi image" class="w-full h-48 object-cover">';
+                echo '<img src="path_to_default_image.jpg" alt="Car image is currently not available" class="w-full h-48 object-cover">';
               }
 
 
