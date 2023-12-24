@@ -231,7 +231,6 @@ session_start(); // Initialize the session
                 echo '<img src="path_to_default_image.jpg" alt="Car image is currently not available" class="w-full h-48 object-cover">';
               }
 
-
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
               echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
@@ -297,7 +296,8 @@ session_start(); // Initialize the session
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css">
   <!-- <script src="script.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
+
+  <!-- <script>
     $(document).ready(function () {
       // Handle the click event on the "View" button
       $(".view-details").on("click", function () {
@@ -313,24 +313,44 @@ session_start(); // Initialize the session
             console.log("AJAX success:", response); // Add this line to check the response from the server
             var carDetails = JSON.parse(response);
 
-            // Populate the modal with car details
+            
+          }
+        });
+
+
+        $.ajax({
+  type: "POST",
+  url: "get_car_details.php",
+  data: { car_id: carId },
+  success: function (response) {
+    console.log("AJAX success:", response);
+    if (response.trim() !== '') { // Check if response is not empty
+      var carDetails = JSON.parse(response);
+// Populate the modal with car details
             $("#carName").text(carDetails.name);
             $("#carYear").text(carDetails.year);
             // Add more car details here
 
             // Show the modal
-            $("#carModal").removeClass("hidden");
-          }
-        });
+            $("#carModal").removeClass("hidden");    } else {
+      console.log("Empty response received");
+    }
+  },
+  error: function (xhr, status, error) {
+    console.log("AJAX error:", error);
+  }
+});
+
       });
 
       // Close the modal
       $(".close-modal").on("click", function () {
-        console.log("Modal close button clicked"); // Add this line to check if the close button is working
+        console.log("Modal close button clicked"); // line to check if the close button is working
         $("#carModal").addClass("hidden");
       });
     });
-  </script>
+  </script> -->
+
   <script src="js/main.js"></script>
   <?php include 'includes/footer.php'; ?>
 

@@ -50,31 +50,40 @@
     $(document).ready(function () {
         // Handle the click event on the "View" button
         $(".view-details").on("click", function () {
-            var carId = $(this).data("car-id");
+            var carId = $(this).data("data-car-id");
 
-            // Use AJAX to fetch car details from the server
+            //AJAX to fetch car details from the server
             $.ajax({
                 type: "POST",
-                url: "get_car_details.php", // Create this file to handle the request
+                url: "get_car_details.php", // file to handle the request
                 data: { car_id: carId },
                 success: function (response) {
-                    var carDetails = JSON.parse(response);
+                    console.log("AJAX success:", response);
+                    if (response.trim() !== '') { // Check if response is not empty
+                        console.log("Button clicked"); // Add this line to check if the button click event is detected
+                        var carDetails = JSON.parse(response);
 
-                    // Populate the modal with car details
-                    $("#carImage").text(carDetails.image);
-                    $("#carName").text(carDetails.name);
-                    $("#carYear").text(carDetails.year);
-                    $("#carCompany").text(carDetails.company);
-                    $("#carEngineType").text(carDetails.engine_type);
-                    $("#carZeroToSixty").text(carDetails.zero_to_sixty);
-                    $("#carMPG").text(carDetails.mpg);
-                    $("#carFuelType").text(carDetails.fuel_type);
-                    $("#carSeatingSpace").text(carDetails.seating_space);
-                    $("#carTravelingCapacity").text(carDetails.traveling_capacity);
-                    $("#carCostPerDay").text(carDetails.cost_per_day);
+                        // Populate the modal with car details
+                        $("#carImage").text(carDetails.image);
+                        $("#carName").text(carDetails.name);
+                        $("#carYear").text(carDetails.year);
+                        $("#carCompany").text(carDetails.company);
+                        $("#carEngineType").text(carDetails.engine_type);
+                        $("#carZeroToSixty").text(carDetails.zero_to_sixty);
+                        $("#carMPG").text(carDetails.mpg);
+                        $("#carFuelType").text(carDetails.fuel_type);
+                        $("#carSeatingSpace").text(carDetails.seating_space);
+                        $("#carTravelingCapacity").text(carDetails.traveling_capacity);
+                        $("#carCostPerDay").text(carDetails.cost_per_day);
 
-                    // Show the modal
-                    $("#carModal").removeClass("hidden");
+                        // Show the modal
+                        $("#carModal").removeClass("hidden");
+                    } else {
+                        console.log("Empty response received");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log("AJAX error:", error);
                 }
             });
         });
