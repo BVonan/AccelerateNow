@@ -39,18 +39,12 @@
 </div>
 
 
-
-
-
-
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         // Handle the click event on the "View" button
         $(".view-details").on("click", function () {
-            var carId = $(this).data("data-car-id");
+            var carId = $(this).data("car-id");
 
             //AJAX to fetch car details from the server
             $.ajax({
@@ -64,7 +58,7 @@
                         var carDetails = JSON.parse(response);
 
                         // Populate the modal with car details
-                        $("#carImage").text(carDetails.image);
+                        // $("#carImage").text(carDetails.image);
                         $("#carName").text(carDetails.name);
                         $("#carYear").text(carDetails.year);
                         $("#carCompany").text(carDetails.company);

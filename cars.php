@@ -153,7 +153,6 @@ session_start(); // Initialize the session
       <div class="grid grid-cols-3 gap-4">
         <!-- Example car card (You can loop through your car data) -->
         <?php
-        // Include your database connection function
         include 'assets/config/db.php';
 
         // Function to fetch and display cars
@@ -163,42 +162,42 @@ session_start(); // Initialize the session
 
           $sql = "SELECT car_id, name, year, image, company, engine_type, zero_to_sixty, mpg, seating_space, traveling_capacity, cost_per_day, fuel_type FROM cars WHERE 1";
 
-          // Apply filters based on user selections
-          if (!empty($yearFilter)) {
-            $sql .= " AND year = " . intval($yearFilter);
-          }
+          // // Apply filters based on user selections
+          // if (!empty($yearFilter)) {
+          //   $sql .= " AND year = " . intval($yearFilter);
+          // }
 
-          if (!empty($companyFilter)) {
-            $sql .= " AND company = '" . $companyFilter . "'";
-          }
+          // if (!empty($companyFilter)) {
+          //   $sql .= " AND company = '" . $companyFilter . "'";
+          // }
 
-          if (!empty($engineTypeFilter)) {
-            $sql .= " AND engine_type = '" . $engineTypeFilter . "'";
-          }
+          // if (!empty($engineTypeFilter)) {
+          //   $sql .= " AND engine_type = '" . $engineTypeFilter . "'";
+          // }
 
-          if (!empty($zeroToSixtyFilter)) {
-            $sql .= " AND zero_to_sixty = '" . $zeroToSixtyFilter . "'";
-          }
+          // if (!empty($zeroToSixtyFilter)) {
+          //   $sql .= " AND zero_to_sixty = '" . $zeroToSixtyFilter . "'";
+          // }
 
-          if (!empty($mpgFilter)) {
-            $sql .= " AND mpg = '" . $mpgFilter . "'";
-          }
+          // if (!empty($mpgFilter)) {
+          //   $sql .= " AND mpg = '" . $mpgFilter . "'";
+          // }
 
-          if (!empty($seatingSpaceFilter)) {
-            $sql .= " AND seating_space = '" . $seatingSpaceFilter . "'";
-          }
+          // if (!empty($seatingSpaceFilter)) {
+          //   $sql .= " AND seating_space = '" . $seatingSpaceFilter . "'";
+          // }
 
-          if (!empty($travelingCapacityFilter)) {
-            $sql .= " AND traveling_capacity = '" . $travelingCapacityFilter . "'";
-          }
+          // if (!empty($travelingCapacityFilter)) {
+          //   $sql .= " AND traveling_capacity = '" . $travelingCapacityFilter . "'";
+          // }
 
-          if (!empty($costPerDayFilter)) {
-            // Extract the price range from the filter
-            $priceRange = explode('-', $costPerDayFilter);
-            $startPrice = isset($priceRange[0]) ? intval(substr($priceRange[0], 1)) : 0;
-            $endPrice = isset($priceRange[1]) ? intval(substr($priceRange[1], 1)) : PHP_INT_MAX;
-            $sql .= " AND cost_per_day >= " . $startPrice . " AND cost_per_day <= " . $endPrice;
-          }
+          // if (!empty($costPerDayFilter)) {
+          //   // Extract the price range from the filter
+          //   $priceRange = explode('-', $costPerDayFilter);
+          //   $startPrice = isset($priceRange[0]) ? intval(substr($priceRange[0], 1)) : 0;
+          //   $endPrice = isset($priceRange[1]) ? intval(substr($priceRange[1], 1)) : PHP_INT_MAX;
+          //   $sql .= " AND cost_per_day >= " . $startPrice . " AND cost_per_day <= " . $endPrice;
+          // }
         
           $result = $conn->query($sql);
 
@@ -213,7 +212,6 @@ session_start(); // Initialize the session
                 // Handle case where image is null or empty
                 echo '<img src="path_to_default_image.jpg" alt="Car image is currently not available" class="w-full h-48 object-cover">';
               }
-
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
               echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
@@ -228,6 +226,7 @@ session_start(); // Initialize the session
         }
 
         // Retrieve the selected filters
+        $yearFilter = isset($_GET['image']) ? intval($_GET['image']) : '';
         $yearFilter = isset($_GET['year']) ? intval($_GET['year']) : '';
         $companyFilter = isset($_GET['company']) ? $_GET['company'] : '';
         $engineTypeFilter = isset($_GET['engine_type']) ? $_GET['engine_type'] : '';
@@ -258,7 +257,7 @@ session_start(); // Initialize the session
     $result = $conn->query($query);
 
     // Output options based on database values
-    if ($result->num_rows > 0) {
+    if ($result->num_rows >= 0) {
       while ($row = $result->fetch_assoc()) {
         echo '<option value="' . $row[$columnName] . '">' . $row[$columnName] . '</option>';
       }
