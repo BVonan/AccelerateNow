@@ -17,7 +17,7 @@ session_start(); // Initialize the session
   <div class="flex">
     <!-- Aside Filter Section -->
     <aside class="w-1/4 p-4">
-      <form id="filterForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+      <form id="filterForm" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <!-- Filter by Year -->
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="year">Year</label>
@@ -214,7 +214,7 @@ session_start(); // Initialize the session
               }
               echo '<h3 class="text-lg font-semibold mt-2">' . $row['name'] . '</h3>';
               echo '<p class="text-gray-500">Year: ' . $row['year'] . '</p>';
-              echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" data-car-id="' . $row['car_id'] . '">View</button>';
+              echo '<button class="bg-blue-500 text-white px-4 py-2 rounded-full mt-2 view-details" car-id="' . $row['car_id'] . '">View</button>';
               echo '</div>';
             }
           } else {
